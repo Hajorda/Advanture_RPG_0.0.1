@@ -65,5 +65,9 @@ public class Store extends Location{
 	}
 
 	
+	public static void selamlama() {
+		System.out.println("Hoş geldin: "+Controller.name);
+	}
+	
 	
 }
