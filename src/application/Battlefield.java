@@ -14,12 +14,12 @@ public class Battlefield extends Location{
 	}
 	
 	//	Dövüşme metodu.
-	public void combat() {
+	/*public void combat() {
 		do {
 			
 			
 		}while(Player.)
-	}
+	}*/
 	
 	//	Canavarlarla konuşulan metod.
 	public void speak() {
