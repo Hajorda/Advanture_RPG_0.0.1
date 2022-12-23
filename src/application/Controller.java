@@ -1,6 +1,5 @@
 package application;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -20,9 +19,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaException;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 /*
@@ -31,7 +27,7 @@ import javafx.stage.Stage;
 
 public class Controller implements Initializable {
 
-	MediaPlayer mediaPlayer;
+	
 
 	static String name;
 	static String gender;
@@ -69,7 +65,7 @@ public class Controller implements Initializable {
 		stage.setScene(scene);
 		stage.show();
 	}
-	
+
 	public void goToStore(ActionEvent event) throws IOException {
 
 		Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
@@ -77,7 +73,6 @@ public class Controller implements Initializable {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-		
 
 	}
 	/*
@@ -124,7 +119,7 @@ public class Controller implements Initializable {
 		}
 	}
 
-	public void saveTheCharacter(ActionEvent e) {
+	public void saveTheCharacter(ActionEvent event) throws IOException {
 
 		Player.sami();
 		if (namefield.getText().equals("")) {
@@ -136,36 +131,41 @@ public class Controller implements Initializable {
 		} else if (age == 0) {
 			System.out.println("Age girilmemis!");
 			warning.setText("Karakterin yasini belirlemelisin");
-		}
-		else if (boxrace.getValue() == null ) {
+		} else if (boxrace.getValue() == null) {
 			System.out.println("Race girilmemis!");
 			warning.setText("Karakterin ırkını belirlemelisin");
-		}
-		else if (boxclass.getValue() == null ) {
+		} else if (boxclass.getValue() == null) {
 			System.out.println("Class girilmemis!");
 			warning.setText("Karakterin ırkını belirlemelisin");
-		}
-		else if (boxjob.getValue() == null ) {
+		} else if (boxjob.getValue() == null) {
 			System.out.println("Job girilmemis!");
 			warning.setText("Karakterin meslegini belirlemelisin");
-}
+		}
 
 		else {
-		System.out.println("----------------------------");
-		System.out.println("Name: " + namefield.getText());
-		System.out.println("Gender: " + gender);
-		System.out.println("Age: " + age);
-		System.out.println("Race: " + boxrace.getValue());
-		System.out.println("Class: " + boxclass.getValue());
-		System.out.println("Job: " + boxjob.getValue());
-		System.out.println("----------------------------");
-		System.out.println("");
-		System.out.println("Karakter olusturuldu oyun baslatılıyor!");
+			System.out.println("----------------------------");
+			System.out.println("Name: " + namefield.getText());
+			System.out.println("Gender: " + gender);
+			System.out.println("Age: " + age);
+			System.out.println("Race: " + boxrace.getValue());
+			System.out.println("Class: " + boxclass.getValue());
+			System.out.println("Job: " + boxjob.getValue());
+			System.out.println("----------------------------");
+			System.out.println("");
+			System.out.println("Karakter olusturuldu oyun baslatılıyor!");
 
-		name = namefield.getText();
-		race = boxrace.getValue();
-		classlar = boxclass.getValue();
-		job = boxjob.getValue();
+			name = namefield.getText();
+			race = boxrace.getValue();
+			classlar = boxclass.getValue();
+			job = boxjob.getValue();
+
+			// Store Sahnesine gitme kodu
+			
+			Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
 		}
 	}
 
@@ -176,40 +176,17 @@ public class Controller implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
-		// Muzik - Bozuk
-		/*
-		try {
-			String filePath = "C:\\Users\\hajor\\Documents\\GitHub\\zawardo\\RPG\\src\\application\\music.mp3";
-
-			Media media = new Media(new File(filePath).toURI().toString());
-			mediaPlayer = new MediaPlayer(media);
-			mediaPlayer.setAutoPlay(true);
-	
-			mediaPlayer.stop();
-			mediaPlayer.setVolume(settingsController.volume);
-			System.out.println(settingsController.volume);
-			mediaPlayer.play();
-			
-
-		} catch (MediaException e) {
-			e.printStackTrace();
-		}*/
-
 		// Kutuların icini dolduruyoruz
-		
+
 		boxrace.getItems().addAll(races);
 		boxclass.getItems().addAll(claslar);
 		boxjob.getItems().addAll(jobs);
-		
+
 	}
 
 }
 
-
-
-
- 
- 
 /*
-<3 <3 <3 <3 Eren seni seviyorum utanıyorum o yüzden aşkımı burdan ilan ediyorum <3 <3 <3
-*/
+ * <3 <3 <3 <3 Eren seni seviyorum utanıyorum o yüzden aşkımı burdan ilan
+ * ediyorum <3 <3 <3
+ */
