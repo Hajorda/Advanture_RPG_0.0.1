@@ -2,6 +2,8 @@ package application;
 
 public class Store extends Location{
 
+	
+	
 	private int W1M = 15;			// W 	 /A    /P			1 					M    /D
 	private int W2M = 25;			// Weapon/Armor/Poison		kaçıncı olduğu		Money/Damage
 	private int W3M = 35;
@@ -64,9 +66,21 @@ public class Store extends Location{
 		P1M = p1m;
 	}
 
-	
+	//	Store ekranı gelir.
 	public static void selamlama() {
 		System.out.println("Hoş geldin: "+Controller.name);
+	}
+	
+	//	İşlemler yapılır
+	//
+	//
+	//
+	//
+	
+	
+	public static void goBattlefield() {
+		Location.location=false;
+		Location.locationControl();
 	}
 	
 	

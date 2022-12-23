@@ -2,10 +2,9 @@ package application;
 
 public class Location extends Controller{
 
-	private static boolean location = true;
+	protected static boolean location = true;
 
 	public Location(boolean location) {
-		super();
 		this.location = location;
 	}
 
@@ -19,11 +18,15 @@ public class Location extends Controller{
 	
 	public static void locationControl() {
 		
+		//	Store'a gitme durumu.
 		if(location) {
-			
+			System.out.println("Şuan Store'dasınız.");
+			Store.selamlama();
 		}
+		//	Battlefield'a gitme durumu.
 		if(!location) {
 			System.out.println("Şuan Battlefield'dasınız.");
+			Battlefield.selamlama();
 		}
 	}
 	

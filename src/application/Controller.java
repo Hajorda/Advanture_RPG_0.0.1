@@ -25,7 +25,7 @@ import javafx.stage.Stage;
  * @author AliBolat
  */
 
-public class Controller implements Initializable {
+public class Controller extends Main implements Initializable {
 
 	
 
@@ -166,6 +166,9 @@ public class Controller implements Initializable {
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
+		
+			Location.locationControl();
+		
 		}
 	}
 
@@ -189,4 +192,5 @@ public class Controller implements Initializable {
 /*
  * <3 <3 <3 <3 Eren seni seviyorum utanıyorum o yüzden aşkımı burdan ilan
  * ediyorum <3 <3 <3
+ * ben de seni sevyiorum ama söylemeue utanıyordum ^^
  */

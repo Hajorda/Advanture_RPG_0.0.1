@@ -9,11 +9,25 @@ public class Battlefield extends Location{
 	}
 
 	
-	public void hit() {
+	public static void selamlama() {
+		System.out.println("Hoş geldin: "+Controller.name);
+	}
+	
+	//	Dövüşme metodu.
+	public void combat() {
+		do {
+			
+			
+		}while(Player.)
+	}
+	
+	//	Canavarlarla konuşulan metod.
+	public void speak() {
 		
 	}
 	
-	public void speak() {
+	//	Level atladıktan sonra canavarların güçlendirildiği metod.
+	public void balance() {
 		
 	}
 }
