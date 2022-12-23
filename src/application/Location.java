@@ -1,8 +1,8 @@
 package application;
 
-public class Location extends Main{
+public class Location extends Controller{
 
-	private boolean location = true;
+	private static boolean location = true;
 
 	public Location(boolean location) {
 		super();
@@ -17,10 +17,10 @@ public class Location extends Main{
 	}
 	
 	
-	public void locationControl() {
+	public static void locationControl() {
 		
 		if(location) {
-			System.out.println("Şuan SafeHouse'dasınız.");
+			
 		}
 		if(!location) {
 			System.out.println("Şuan Battlefield'dasınız.");
