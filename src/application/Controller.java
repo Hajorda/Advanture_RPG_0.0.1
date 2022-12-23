@@ -33,9 +33,13 @@ public class Controller implements Initializable {
 
 	MediaPlayer mediaPlayer;
 
-	String gender;
-	int age = 0;
-	public int appearance = -1;
+	static String name;
+	static String gender;
+	static int age = 0;
+	static int appearance = -1;
+	static String race;
+	static String classlar;
+	static String job;
 
 	@FXML
 	private Stage stage;
@@ -64,10 +68,18 @@ public class Controller implements Initializable {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+	}
+	
+	public void goToStore(ActionEvent event) throws IOException {
+
+		Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 		
 
 	}
-
 	/*
 	 * public void switchToScene1(ActionEvent event) throws IOException { root =
 	 * FXMLLoader.load(getClass().getResource("Scene1.fxml")); stage =
@@ -114,6 +126,7 @@ public class Controller implements Initializable {
 
 	public void saveTheCharacter(ActionEvent e) {
 
+		Player.sami();
 		if (namefield.getText().equals("")) {
 			System.out.println("İsim girilmemis!");
 			warning.setText("Karakterin ismini belirlemelisin!");
@@ -124,7 +137,20 @@ public class Controller implements Initializable {
 			System.out.println("Age girilmemis!");
 			warning.setText("Karakterin yasini belirlemelisin");
 		}
+		else if (boxrace.getValue() == null ) {
+			System.out.println("Race girilmemis!");
+			warning.setText("Karakterin ırkını belirlemelisin");
+		}
+		else if (boxclass.getValue() == null ) {
+			System.out.println("Class girilmemis!");
+			warning.setText("Karakterin ırkını belirlemelisin");
+		}
+		else if (boxjob.getValue() == null ) {
+			System.out.println("Job girilmemis!");
+			warning.setText("Karakterin meslegini belirlemelisin");
+}
 
+		else {
 		System.out.println("----------------------------");
 		System.out.println("Name: " + namefield.getText());
 		System.out.println("Gender: " + gender);
@@ -133,7 +159,14 @@ public class Controller implements Initializable {
 		System.out.println("Class: " + boxclass.getValue());
 		System.out.println("Job: " + boxjob.getValue());
 		System.out.println("----------------------------");
+		System.out.println("");
+		System.out.println("Karakter olusturuldu oyun baslatılıyor!");
 
+		name = namefield.getText();
+		race = boxrace.getValue();
+		classlar = boxclass.getValue();
+		job = boxjob.getValue();
+		}
 	}
 
 	private String[] races = { "Human", "Elf", "Ork", "Urk-Hai", "Dwarf" };
@@ -163,6 +196,7 @@ public class Controller implements Initializable {
 		}*/
 
 		// Kutuların icini dolduruyoruz
+		
 		boxrace.getItems().addAll(races);
 		boxclass.getItems().addAll(claslar);
 		boxjob.getItems().addAll(jobs);

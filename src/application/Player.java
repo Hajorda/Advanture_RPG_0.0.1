@@ -1,6 +1,6 @@
 package application;
 
-public class Player extends Main {
+public class Player extends Controller {
 
 	private String name;		
 	private int health=100;		
@@ -74,8 +74,8 @@ public class Player extends Main {
 		this.money = money;
 	}
 		
-	public void sami() {
-		
+	public static void sami() {
+		System.out.println("a");
 	}
 	
 	
