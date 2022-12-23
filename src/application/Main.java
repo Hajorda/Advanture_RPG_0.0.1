@@ -12,7 +12,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaException;
 import javafx.scene.media.MediaPlayer;
 
-public class Main extends Application implements Runnable {
+public class Main extends Application{
 	 
 
 
@@ -53,10 +53,7 @@ public class Main extends Application implements Runnable {
 
 	}
 
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
 
 }
