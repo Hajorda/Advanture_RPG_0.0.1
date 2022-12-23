@@ -5,10 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="40.0" layoutY="115.0" mnemonicParsing="false" text="Buy" />
+      <Button layoutX="40.0" layoutY="115.0" mnemonicParsing="false" onAction="#buySword" text="Buy" />
       <Button layoutX="103.0" layoutY="115.0" mnemonicParsing="false" text="Buy" />
       <Button layoutX="167.0" layoutY="115.0" mnemonicParsing="false" text="Buy" />
       <Button layoutX="228.0" layoutY="115.0" mnemonicParsing="false" text="Buy" />
@@ -54,5 +53,7 @@
       <Label id="damageLabel" layoutX="505.0" layoutY="232.0" text="Label" />
       <ImageView fitHeight="124.0" fitWidth="99.0" layoutX="411.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="473.0" layoutY="14.0" mnemonicParsing="false" text="Back to Battle Field" />
+      <Label layoutX="411.0" layoutY="254.0" prefHeight="17.0" prefWidth="64.0" text="Armor:" />
+      <Label id="armorLabel" layoutX="505.0" layoutY="254.0" text="Label" />
    </children>
 </AnchorPane>
