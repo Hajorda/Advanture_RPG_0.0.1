@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <ImageView fx:id="apimage" fitHeight="150.0" fitWidth="200.0" layoutX="367.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@df.png" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="datefield" layoutX="113.0" layoutY="134.0" onAction="#getDate" promptText="Enter the date of the player" />
+      <Label layoutX="40.0" layoutY="74.0" text="Name" />
+      <ChoiceBox fx:id="boxrace" layoutX="114.0" layoutY="171.0" prefWidth="150.0" />
+      <TextField fx:id="namefield" layoutX="113.0" layoutY="61.0" />
+      <Button fx:id="savebutton" layoutX="443.0" layoutY="350.0" mnemonicParsing="false" onAction="#saveTheCharacter" text="Save the Character" />
+      <Button layoutX="479.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToSettings" text="Back" />
+      <Label layoutX="40.0" layoutY="109.0" text="Gender" />
+      <Label layoutX="40.0" layoutY="138.0" text="Date" />
+      <Label layoutX="40.0" layoutY="175.0" text="Race" />
+      <Label layoutX="40.0" layoutY="210.0" text="Class" />
+      <ChoiceBox fx:id="boxclass" layoutX="114.0" layoutY="206.0" prefWidth="150.0" />
+      <RadioButton fx:id="male" layoutX="114.0" layoutY="103.0" mnemonicParsing="false" onAction="#radio" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="female" layoutX="189.0" layoutY="103.0" mnemonicParsing="false" onAction="#radio" text="Female" toggleGroup="$gender" />
+      <Label layoutX="40.0" layoutY="250.0" text="Job" />
+      <Label layoutX="35.0" layoutY="290.0" text="Appearance" />
+      <ChoiceBox fx:id="boxjob" layoutX="114.0" layoutY="246.0" prefWidth="150.0" />
+      <Label layoutX="180.0" layoutY="15.0" text="Create Your Character">
+         <font>
+            <Font name="Ebrima Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="warning" layoutX="33.0" layoutY="325.0" text="." textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="ap1" layoutX="114.0" layoutY="290.0" mnemonicParsing="false" onAction="#setAppearance" text="1">
+         <toggleGroup>
+            <ToggleGroup fx:id="apperance" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="ap2" layoutX="166.0" layoutY="290.0" mnemonicParsing="false" onAction="#setAppearance" text="2" toggleGroup="$apperance" />
+      <RadioButton fx:id="ap3" layoutX="219.0" layoutY="290.0" mnemonicParsing="false" onAction="#setAppearance" text="3" toggleGroup="$apperance" />
+   </children>
+</AnchorPane>
