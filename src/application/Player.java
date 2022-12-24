@@ -15,7 +15,6 @@ public class Player {
 		this.name = name;
 		this.armor = armor;
 		this.damage = damage;
-		
 		this.gold = gold;
 	}
 
