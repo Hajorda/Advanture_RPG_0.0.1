@@ -26,7 +26,7 @@ public class Location extends MainController{
 		//	Battlefield'a gitme durumu.
 		if(!location) {
 			System.out.println("Şuan Battlefield'dasınız.");
-			Battlefield.selamlama();
+			//Battlefield.selamlama();
 		}
 	}
 	
