@@ -42,7 +42,7 @@ public class Store extends Location{
 		}
 	}
 
-	// Pot satın alma metodu.
+	// Medium Pot satın alma metodu.
 	public void buyMediumPotion(int price, Player player) {
 		if(price <= player.getGold()) {
 			player.setGold(player.getGold()-price);
@@ -50,6 +50,7 @@ public class Store extends Location{
 		}
 	}
 
+	//	Big Pot satın alma metodu.
 	public void buyBigPotion(int price, Player player) {
 		if(price <= player.getGold()) {
 			player.setGold(player.getGold()-price);
