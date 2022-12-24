@@ -17,6 +17,10 @@ public class Player {
 		this.damage = damage;
 		this.gold = gold;
 	}
+	
+	
+	
+	
 
 	public int getGold() {
 		return gold;

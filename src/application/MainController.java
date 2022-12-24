@@ -156,6 +156,13 @@ public class MainController extends Main implements Initializable {
 			job = boxjob.getValue();
 			
 			Player player = new Player(100, 10, 10, name, 100);
+			
+			
+			Store store = new Store();
+			store.setTemp(player);
+			
+			
+			
 
 			// Store Sahnesine gitme kodu
 			
