@@ -7,8 +7,31 @@ public class Battlefield extends Location{
 	}
 
 	private static int level = 1; 
+	private static int mediumPotionCounter = 0;
+	private static int bigPotionCounter = 0;
 	
 	
+	
+	public static int getMediumPotionCounter() {
+		return mediumPotionCounter;
+	}
+
+
+	public static void setMediumPotionCounter(int mediumPotionCounter) {
+		Battlefield.mediumPotionCounter = mediumPotionCounter;
+	}
+
+
+	public static int getBigPotionCounter() {
+		return bigPotionCounter;
+	}
+
+
+	public static void setBigPotionCounter(int bigPotionCounter) {
+		Battlefield.bigPotionCounter = bigPotionCounter;
+	}
+
+
 	public int getLevel() {
 		return level;
 	}
@@ -86,7 +109,7 @@ public class Battlefield extends Location{
 	}
 	
 	public static void getReward(Player player) {
-		player.setGold(level*10);
+		player.setGold(player.getGold() + (level*10));
 	}
 	
 	//	Canavarlarla konuşulan metod.
@@ -94,8 +117,16 @@ public class Battlefield extends Location{
 		return "sea";
 	}
 	
-	public void usePotion() {
-		
+	public void useMediumPotion() {
+		setMediumPotionCounter(mediumPotionCounter-1);
 	}
+	
+	public void useBigPotion() {
+		setBigPotionCounter(bigPotionCounter-1);
+	}
+
+
+
+
 	
 }
