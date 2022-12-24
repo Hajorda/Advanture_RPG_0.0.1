@@ -138,7 +138,7 @@ public class MainController extends Main implements Initializable {
 			warning.setText("Karakterin meslegini belirlemelisin");
 		}
 
-		else {
+		//else {
 			System.out.println("----------------------------");
 			System.out.println("Name: " + namefield.getText());
 			System.out.println("Gender: " + gender);
@@ -167,7 +167,7 @@ public class MainController extends Main implements Initializable {
 		
 			Location.locationControl();
 		
-		}
+		//}
 	}
 
 	private String[] races = { "Human", "Elf", "Ork", "Urk-Hai", "Dwarf" };

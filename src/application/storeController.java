@@ -1,21 +1,9 @@
 package application;
 
-import java.io.IOException;
+public class storeController {
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-public class Store extends Location{
-	
-	
-
-	public Store(boolean location) {
-		super(location);
+	public storeController(boolean location) {
+		//super(location);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -32,8 +20,12 @@ public class Store extends Location{
 
 
 
+	
 	//	Kılıç satın alma metodu.
-	public void buySword(int addDamage, int price, Player player) {
+	public void buySword() {
+		buySword1(0, 0, null);
+	}
+	public void buySword1(int addDamage, int price, Player player) {
 		if(price <= player.getGold()) {
 			player.setDamage(player.getDamage()+addDamage);
 			player.setGold(player.getGold()-price);
@@ -69,15 +61,4 @@ public class Store extends Location{
 			Battlefield.setBigPotionCounter(Battlefield.getBigPotionCounter()+1);;
 		}
 	}
-
-	// Battlefield'a gitme metodu.
-	public void goBattlefield(ActionEvent event) throws IOException {
-		Location.location=false;
-		Location.locationControl();
-		
-	}
-	
-	
-
-
 }
