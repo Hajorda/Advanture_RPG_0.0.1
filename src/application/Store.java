@@ -1,34 +1,51 @@
 package application;
 
+ 
+import java.io.File;
 import java.io.IOException;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
+import javafx.event.*;
 
-public class Store {
+
+public class Store{
+	
+	static Player player;
 	
 	
-	private Player temp;
 	
-	public void setTemp(Player player) {
-		this.temp = player;
-		System.out.println(player+"deniz");
+	
+	public static void method() {
+		String info;
+		File file = new File("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
+		try {
+			Scanner scanner = new Scanner(file);	
+			info = scanner.nextLine();
+			String[] a = info.split(",");
+			player = new Player(Integer.parseInt(a[0]), Integer.parseInt(a[1]), Integer.parseInt(a[2]), a[3] , Integer.parseInt(a[4]));
+			Files.writeString(file.toPath(), "", StandardCharsets.UTF_8);
+		}
+		catch(Exception a) {
+			System.out.println("yokmuş scanner");
+			
+		}
+		
 	}
 	
 	
 	
 	
+	
+	
+	
 
-
-//	public Store(boolean location) {
-//		super(location);
-//		// TODO Auto-generated constructor stub
-//	}
-
+	
+	
+	
+	
 	
 	
 	//Button methodları
@@ -66,9 +83,11 @@ public class Store {
 
 	
 	public void buySword(int index) {
-		if(index*10 <= temp.getGold()) {
-			temp.setDamage(temp.getDamage()+(index*30));
-			System.out.println(temp.getDamage());
+		method();
+		
+		if(index*10 <= player.getGold()) {
+			player.setDamage(player.getDamage()+(index*30));
+			System.out.println(player.getDamage());
 		}
 		else {
 			System.out.println("!! PARA YETERSİZ !!");
@@ -77,9 +96,9 @@ public class Store {
 
 	
 	public void buyArmor(int index) {
-		if(index*20 <= temp.getGold()) {
-			temp.setArmor(temp.getArmor()+(index*10));
-			temp.setGold(temp.getGold()-(index*20));
+		if(index*20 <= player.getGold()) {
+			player.setArmor(player.getArmor()+(index*10));
+			player.setGold(player.getGold()-(index*20));
 		}
 		else {
 			System.out.println("!! PARA YETERSİZ !!");
@@ -89,18 +108,18 @@ public class Store {
 	
 
 	public void buyMediumPotion(int index) {
-		if(index*20 <= temp.getGold()) {
-			temp.setGold(temp.getGold()-(index*20));
-			temp.setHealth(temp.getHealth()+30);
+		if(index*20 <= player.getGold()) {
+			player.setGold(player.getGold()-(index*20));
+			player.setHealth(player.getHealth()+30);
 			Battlefield.setMediumPotionCounter(Battlefield.getMediumPotionCounter()+1);;
 		}
 	}
 
 
 	public void buyBigPotion(int index) {
-		if((index*40) <= temp.getGold()) {
-			temp.setGold(temp.getGold()-(index*40));
-			temp.setHealth(temp.getHealth()+60);
+		if((index*40) <= player.getGold()) {
+			player.setGold(player.getGold()-(index*40));
+			player.setHealth(player.getHealth()+60);
 			Battlefield.setBigPotionCounter(Battlefield.getBigPotionCounter()+1);;
 		}
 	}
@@ -110,16 +129,11 @@ public class Store {
 		Location.location=false;
 		Location.locationControl();
 		
+		String string =player.getHealth()+","+  player.getArmor()+","+ player.getDamage()+"," + player.getName() +","+  player.getGold();
+		
+		Path path = Paths.get("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
+		Files.writeString(path, string, StandardCharsets.UTF_8);
+		
 	}
-
-	
-
-//	public static void selamlama() {
-//		// TODO Auto-generated method stub
-//		
-//	}
-	
-	
-
 
 }

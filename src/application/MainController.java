@@ -1,7 +1,12 @@
 package application;
 
+import java.io.File;
 import java.io.IOException; 
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -157,10 +162,10 @@ public class MainController extends Main implements Initializable {
 			
 			Player player = new Player(100, 10, 10, name, 100);
 			
+			String string =player.getHealth()+","+  player.getArmor()+","+ player.getDamage()+"," + player.getName() +","+  player.getGold();
 			
-			Store store = new Store();
-			store.setTemp(player);
-			
+			Path path = Paths.get("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
+			Files.writeString(path, string, StandardCharsets.UTF_8);
 			
 			
 

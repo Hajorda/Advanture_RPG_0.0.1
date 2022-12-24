@@ -12,6 +12,7 @@ public class Player {
 	private int gold;
 
 	public Player(int health, int armor, int damage, String name, int gold) {
+		this.health = health;
 		this.name = name;
 		this.armor = armor;
 		this.damage = damage;
