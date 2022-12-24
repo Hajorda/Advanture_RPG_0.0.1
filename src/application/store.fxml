@@ -52,7 +52,7 @@
       <Label layoutX="411.0" layoutY="232.0" prefHeight="17.0" prefWidth="64.0" text="Damage:" />
       <Label id="damageLabel" layoutX="505.0" layoutY="232.0" text="Label" />
       <ImageView fitHeight="124.0" fitWidth="99.0" layoutX="411.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="473.0" layoutY="14.0" mnemonicParsing="false" text="Back to Battle Field" />
+      <Button layoutX="473.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBattlefield" text="Back to Battle Field" />
       <Label layoutX="411.0" layoutY="254.0" prefHeight="17.0" prefWidth="64.0" text="Armor:" />
       <Label id="armorLabel" layoutX="505.0" layoutY="254.0" text="Label" />
    </children>

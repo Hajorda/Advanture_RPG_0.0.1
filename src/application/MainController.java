@@ -1,10 +1,9 @@
 package application;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -21,9 +21,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-/*
- * @author AliBolat
- */
 
 public class MainController extends Main implements Initializable {
 
@@ -56,6 +53,7 @@ public class MainController extends Main implements Initializable {
 	private ImageView apimage;
 	@FXML
 	private ChoiceBox<String> boxrace, boxclass, boxjob;
+	
 
 	public void backToSettings(ActionEvent event) throws IOException {
 

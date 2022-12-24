@@ -1,6 +1,23 @@
 package application;
 
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 public class Store extends Location{
+	
+	@FXML
+	private Stage stage;
+	@FXML
+	private Scene scene;
+	@FXML
+	private Parent root;
 
 	public Store(boolean location) {
 		super(location);
@@ -59,10 +76,19 @@ public class Store extends Location{
 	}
 
 	// Battlefield'a gitme metodu.
-	public static void goBattlefield() {
+	public void goBattlefield(ActionEvent event) throws IOException {
 		Location.location=false;
 		Location.locationControl();
+		
+		Parent root = FXMLLoader.load(getClass().getResource("War.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setFullScreen(true);
+		stage.show();
 	}
+	
+	
 
 
 }
