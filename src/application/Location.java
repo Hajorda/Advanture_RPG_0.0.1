@@ -1,6 +1,6 @@
 package application;
 
-public class Location extends Controller{
+public class Location extends MainController{
 
 	protected static boolean location = true;
 

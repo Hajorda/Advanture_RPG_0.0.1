@@ -1,37 +1,19 @@
 package application;
 
-import java.lang.ModuleLayer.Controller;
-
-public class Player {
+public class Character {
 	
-	private String name;
+	
+
 	private int health;
 	private int armor;
 	private int damage;
+	private String name;
 	
-	private int gold;
-
-	public Player(int health, int armor, int damage, String name, int gold) {
-		this.name = name;
+	public Character(int health, int armor, int damage, int level, String name) {
+		super();
 		this.armor = armor;
 		this.damage = damage;
-		
-		this.gold = gold;
-	}
-
-	public int getGold() {
-		return gold;
-	}
-
-	public void setGold(int gold) {
-		this.gold = gold;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
+		this.health = health;
 		this.name = name;
 	}
 
@@ -59,13 +41,15 @@ public class Player {
 		this.damage = damage;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }

@@ -25,7 +25,7 @@ import javafx.stage.Stage;
  * @author AliBolat
  */
 
-public class Controller extends Main implements Initializable {
+public class MainController extends Main implements Initializable {
 
 	
 
@@ -121,7 +121,6 @@ public class Controller extends Main implements Initializable {
 
 	public void saveTheCharacter(ActionEvent event) throws IOException {
 
-		Player.sami();
 		if (namefield.getText().equals("")) {
 			System.out.println("İsim girilmemis!");
 			warning.setText("Karakterin ismini belirlemelisin!");
@@ -158,6 +157,8 @@ public class Controller extends Main implements Initializable {
 			race = boxrace.getValue();
 			classlar = boxclass.getValue();
 			job = boxjob.getValue();
+			
+			Player player = new Player(100, 10, 10, name, 100);
 
 			// Store Sahnesine gitme kodu
 			

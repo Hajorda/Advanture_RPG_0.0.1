@@ -68,7 +68,7 @@ public class Store extends Location{
 
 	//	Store ekranı gelir.
 	public static void selamlama() {
-		System.out.println("Hoş geldin: "+Controller.name);
+		System.out.println("Hoş geldin: "+MainController.name);
 	}
 	
 	//	İşlemler yapılır
