@@ -43,10 +43,17 @@ public class Store extends Location{
 	}
 	
 	// Pot satın alma metodu.
-	public void buyPotion(int price, Player player) {
+	public void buyPotion1(int price, Player player) {
 		if(price <= player.getGold()) {
 			player.setGold(player.getGold()-price);
-			battlefield.potionCounter++;
+			battlefield.mediumPotionCounter++;
+		}
+	}
+,
+	public void buyPotion2(int price, Player player) {
+		if(price <= player.getGold()) {
+			player.setGold(player.getGold()-price);
+			battlefield.bigPotionCounter++;
 		}
 	}
 	
