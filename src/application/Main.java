@@ -7,18 +7,10 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-
-public class Main extends Application{
-
-	 
-
-
+public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) {
-		
-		
-		
 
 		// Stage stage = new Stage() ----> Stage ekleme
 
@@ -42,14 +34,15 @@ public class Main extends Application{
 
 	public static void main(String[] args) {
 
-  
-	
-	
+		// nasıl gidiyor beyler??
+		// System.out.println(" ** ** ");
+		// System.out.println("*  *  * ");
+		// System.out.println(" *   * ");
+		// System.out.println("  * * ");
+		// System.out.println("   * ");
+
 		launch(args);
-		
 
 	}
-
-
 
 }
