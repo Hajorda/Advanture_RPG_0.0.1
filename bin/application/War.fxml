@@ -66,7 +66,10 @@
             <Font size="54.0" />
          </font>
       </Label>
-      <Label fx:id="consoleData" layoutX="1257.0" layoutY="778.0" text="ConsE" />
+      <Label fx:id="consoleData" layoutX="1204.0" layoutY="747.0" prefHeight="145.0" prefWidth="679.0" text="ConsE">
+         <font>
+            <Font size="34.0" />
+         </font></Label>
       <Button layoutX="1051.0" layoutY="25.0" mnemonicParsing="false" onAction="#goStore" prefHeight="80.0" prefWidth="438.0" text="TAVERN">
          <font>
             <Font name="System Bold" size="32.0" />
