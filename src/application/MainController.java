@@ -163,19 +163,13 @@ public class MainController extends Main implements Initializable {
 		Path path = Paths.get("info.txt");
 		Files.writeString(path, string, StandardCharsets.UTF_8);
 
-		// Store Sahnesine gitme kodu
-
+			// Store Sahnesine gitme kodu
 		Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setFullScreen(true);
 		stage.show();
-
-//			Location.locationControl();
-
-		// }
-
 	}
 
 	private String[] races = { "Human", "Elf", "Ork", "Urk-Hai", "Dwarf" };
@@ -184,18 +178,8 @@ public class MainController extends Main implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
-		// Kutuların icini dolduruyoruz
-
 		boxrace.getItems().addAll(races);
 		boxclass.getItems().addAll(claslar);
 		boxjob.getItems().addAll(jobs);
-
 	}
-
 }
-
-/*
- * <3 <3 <3 <3 Eren seni seviyorum utanıyorum o yüzden aşkımı burdan ilan
- * ediyorum <3 <3 <3 ben de seni sevyiorum ama söylemeue utanıyordum ^^
- */

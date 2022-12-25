@@ -27,13 +27,17 @@ import javafx.stage.Stage;
 public class WarController implements Initializable {
 
 	static int level = 1;
+	int konusma = 1;
+	static int durum = 1;
 	private static Goblin goblin = new Goblin(level);
 	private static Skeleton skeleton = new Skeleton(level);
 	private static Zombie zombie = new Zombie(level);
+	private static int mediumPotionCounter = 0;
+	private static int bigPotionCounter = 0;
+	Player player;
 	// private static Player player = new Player(100, 10, 10, "sa", 100);
 
-	Player player;
-
+		//	Battlefield ekranının başladığı ve hata ayıklama yapıldığı metod.
 	public void method() {
 		String info;
 		File file = new File("info.txt");
@@ -46,17 +50,10 @@ public class WarController implements Initializable {
 			Files.writeString(file.toPath(), "", StandardCharsets.UTF_8);
 		} catch (Exception a) {
 			System.out.println("yokmuş scanner");
-
 		}
-
 	}
 
-	private void gelistir() {
-		goblin = new Goblin(level);
-		skeleton = new Skeleton(level);
-		zombie = new Zombie(level);
-	}
-
+		//	FXML komutlarının yazıldığı bölüm.
 	@FXML
 	private Stage stage;
 	@FXML
@@ -101,38 +98,29 @@ public class WarController implements Initializable {
 	@FXML
 	private ImageView imgSkeleton;
 
-	private static int mediumPotionCounter = 0;
-	private static int bigPotionCounter = 0;
 
+		//	Getter-Setter'lar.
 	public static int getMediumPotionCounter() {
 		return mediumPotionCounter;
 	}
-
 	public static void setMediumPotionCounter(int mediumPotionCounter) {
 		WarController.mediumPotionCounter = mediumPotionCounter;
 	}
-
 	public static int getBigPotionCounter() {
 		return bigPotionCounter;
 	}
-
 	public static void setBigPotionCounter(int bigPotionCounter) {
 		WarController.bigPotionCounter = bigPotionCounter;
 	}
-
 	public int getLevel() {
 		return level;
 	}
-
 	public void setLevel(int level) {
 		this.level = level;
 	}
 
-	public static void increaseLevel() {
-		level++;
-		System.out.println(level);
-	}
-
+	
+		//	Settings tuşuna basıldığı zaman çağrılan metod.	
 	public void goAyar(ActionEvent event) throws IOException {
 
 		Parent root = FXMLLoader.load(getClass().getResource("ayarlar.fxml"));
@@ -141,17 +129,8 @@ public class WarController implements Initializable {
 		stage.setScene(scene);
 		stage.show();
 	}
-
-	public static void fight(Goblin goblin, Skeleton skeleton, Zombie zombie, Player player) {
-
-		skeleton.setHealth(skeleton.getHealth() - (player.getDamage() - skeleton.getArmor()));
-		zombie.setHealth(zombie.getHealth() - (player.getDamage() - zombie.getArmor()));
-		goblin.setHealth(goblin.getHealth() - (player.getDamage() - goblin.getArmor()));
-		player.setHealth(player.getHealth() + (player.getArmor())- ((zombie.getDamage() + skeleton.getDamage() + goblin.getDamage())));
-
-	}
-	// yaratıkların kaçar tane olacağına karar veren method
-
+	
+		//	Yaratıkların oluşturulduğu metod.
 	public void generateObstacle() {
 		Goblin goblin = new Goblin(level);
 		Skeleton skeleton = new Skeleton(level);
@@ -165,8 +144,7 @@ public class WarController implements Initializable {
 	 * this.stage.setScene(scene); this.stage.show(); }
 	 */
 
-	// Dövüşme metodu.
-
+		//	Hit butonuna tıklandığı zaman çağrılan metod.
 	public void Combat(ActionEvent event) throws IOException {
 
 		consoleData.setText(speak());
@@ -233,21 +211,37 @@ public class WarController implements Initializable {
 			stage.setScene(scene);
 			stage.show();
 		}
-
+	}
+	
+		// Dövüşme metodu.
+	public static void fight(Goblin goblin, Skeleton skeleton, Zombie zombie, Player player) {
+		
+		if(durum==1) {
+			goblin.setHealth((goblin.getHealth()+goblin.getArmor()) - player.getDamage());
+			player.setHealth((player.getHealth() + player.getArmor()) - goblin.getDamage());
+		}
+		else if(durum==2) {
+			skeleton.setHealth((skeleton.getHealth()+skeleton.getArmor()) - player.getDamage());
+			player.setHealth((player.getHealth() + player.getArmor()) - skeleton.getDamage());
+		}
+		else if(durum==3) {
+			zombie.setHealth((zombie.getHealth() + zombie.getArmor()) - player.getDamage());
+			player.setHealth((player.getHealth() + player.getArmor()) - zombie.getDamage());
+			durum=1;
+		}
+		durum++;
 	}
 
+		//	Tavern tuşuna basılma durumunda çağrılan metod.
 	public void goStore(ActionEvent event) throws IOException {
-//		Location.location = true;
-//		Location.locationControl();
-
+		
 		String string = player.getHealth() + "," + player.getArmor() + "," + player.getDamage() + "," + player.getName()
 				+ "," + player.getGold();
 
 		Path path = Paths.get("info.txt");
 		Files.writeString(path, string, StandardCharsets.UTF_8);
 
-		// Store Gitme Kodu
-	
+			// Store'a Gitme Kodu.
 		Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
@@ -255,13 +249,13 @@ public class WarController implements Initializable {
 		stage.show();
 	}
 
+		//	Dövüşü kazanma durumunda çağrılan ödül metodu.
 	public static void getReward(Player player) {
 		player.setGold(player.getGold() + (level * 10));
 		System.out.println(player.getGold());
 	}
 
-	// Canavarlarla konuşulan metod.
-	int konusma = 1;
+		// Canavarlarla konuşulan metod.
 	public String speak() {
 		
 		switch(konusma) {
@@ -278,11 +272,9 @@ public class WarController implements Initializable {
 			default:
 				return "Uykum geldi!";
 		}
-		
-		
-	
 	}
 
+		// Medium Pot kullanma durumunda çağrılan metod.
 	public void useMediumPotion() {
 		if(getMediumPotionCounter()>0) {
 			setMediumPotionCounter(mediumPotionCounter - 1);
@@ -291,7 +283,8 @@ public class WarController implements Initializable {
 			healthBar.setProgress((player.getHealth() / (double) 100));
 		}
 	}
-
+		
+		// Big Pot kullanma durumunda çağrılan metod.
 	public void useBigPotion() {
 		if(getBigPotionCounter()>0) {
 			setBigPotionCounter(bigPotionCounter - 1);
@@ -301,6 +294,19 @@ public class WarController implements Initializable {
 		}
 	}
 
+		//	Dövüşü kazanma durumunda çağrılan level arttırma metodu.
+	public static void increaseLevel() {
+		level++;
+		System.out.println(level);
+	}
+	
+		//	Dövüşü kazanma durumunda çağrılan canavar geliştirme metodu.
+	private void gelistir() {
+		goblin = new Goblin(level);
+		skeleton = new Skeleton(level);
+		zombie = new Zombie(level);
+	}
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub

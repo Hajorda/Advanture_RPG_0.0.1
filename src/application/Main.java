@@ -12,8 +12,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 
-		// Stage stage = new Stage() ----> Stage ekleme
-
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("generator.fxml"));
 			// Group root = new Group();
@@ -23,21 +21,13 @@ public class Main extends Application {
 			stage.setScene(scene);
 			stage.show();
 			stage.setTitle("Advanture RPG Game");
-
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public static void main(String[] args) {
 
-
-
-
 		launch(args);
-
 	}
-
 }

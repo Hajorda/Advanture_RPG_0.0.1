@@ -28,6 +28,7 @@ public class Store implements Initializable{
 	
 	 Player player;
 	
+	 	//	FXML kodları.
 	@FXML
 	private Stage stage;
 	@FXML
@@ -47,8 +48,7 @@ public class Store implements Initializable{
 	private Label goldLabel;
 	
 	
-	
-	public  void readMethod() {
+	public void readMethod() {
 		String info;
 		File file = new File("info.txt");
 		try {
@@ -61,15 +61,10 @@ public class Store implements Initializable{
 		}
 		catch(Exception a) {
 			System.out.println("yokmuş scanner");
-			
 		}
-		
 	}
 	
-	
-	
-	
-	//Button methodları
+		//Button methodları
 	public void buySword1Button() {
 		buySword(1);	
 	}
@@ -102,7 +97,7 @@ public class Store implements Initializable{
 	}
 
 
-	
+		//	Kılıç alma durumunu kontrol eden metod.
 	public void buySword(int index) {
 		if(index*50 <= player.getGold()) {
 			player.setGold(player.getGold()-index*50);
@@ -114,7 +109,7 @@ public class Store implements Initializable{
 		}
 	}
 
-	
+		//	Zırh alma durumunu kontrol eden metod.
 	public void buyArmor(int index) {
 		if(index*50 <= player.getGold()) {
 			player.setGold(player.getGold()-index*50);
@@ -127,7 +122,7 @@ public class Store implements Initializable{
 	}
 
 	
-
+		//	Medium Pot alma durumunu kontrol eden metod.
 	public void buyMediumPotion(int index) {
 		if(index*30 <= player.getGold()) {
 			player.setGold(player.getGold()-(index*30));
@@ -138,7 +133,7 @@ public class Store implements Initializable{
 			uyari();
 	}
 
-
+		//	Big Pot alma durumunu kontrol eden metod.
 	public void buyBigPotion(int index) {
 		if(index*60 <= player.getGold()) {
 			player.setGold(player.getGold()-(index*60));
@@ -149,7 +144,7 @@ public class Store implements Initializable{
 			uyari();
 	}
 	
-	
+		// ????????????????????????????????
 	public void bilmem() throws IOException{
 		
 		String string2 =player.getHealth()+","+  player.getArmor()+","+ player.getDamage()+"," + player.getName() +","+  player.getGold();
@@ -158,11 +153,8 @@ public class Store implements Initializable{
 		
 	}
 
-	// Battlefield'a gitme metodu.
+		//	Battlefield tuşuna basılma durumunda çağrılan metod.
 	public void goBattlefield(ActionEvent event) throws IOException {
-//		Location.location=false;
-//		Location.locationControl();
-		
 		bilmem();
 		
 		Parent root = FXMLLoader.load(getClass().getResource("war.fxml"));
@@ -171,16 +163,16 @@ public class Store implements Initializable{
 		stage.setScene(scene);
 		stage.setFullScreen(true);
 		stage.show();
-		
 	}
 
+		//	Stat'ları ekranda gösteren metod.
 	public void setStats() {
 		armorLabel.setText(player.getArmor()+"");
 		damageLabel.setText(player.getDamage()+"");
 		goldLabel.setText(player.getGold()+"");
 	}
 
-
+		//	Uyarı verme metodu.
 	public void uyari() {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Fakir");
