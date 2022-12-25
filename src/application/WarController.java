@@ -28,7 +28,7 @@ public class WarController implements Initializable {
 
 	static int level = 1;
 	int konusma = 1;
-	static int durum = 1;
+	private static int durum = 1;
 	private static Goblin goblin = new Goblin(level);
 	private static Skeleton skeleton = new Skeleton(level);
 	private static Zombie zombie = new Zombie(level);
@@ -153,6 +153,7 @@ public class WarController implements Initializable {
 		player.setHealth(player.getHealth());
 		// gunceleme
 		 //healthBar,healthBar1,healthBar2,healthBar3
+		System.out.println(goblin.getHealth());
 		 healthBar.setProgress((player.getHealth() / (double) 100));
 		healthBar1.setProgress((goblin.getHealth() / (double) 100));
 		healthBar2.setProgress((skeleton.getHealth() / (double) 100));
@@ -197,6 +198,7 @@ public class WarController implements Initializable {
 			 
 		} else if (!(goblin.getHealth() + skeleton.getHealth() + zombie.getHealth() > 0)) {
 
+			gelistir();
 			getReward(player);
 			increaseLevel();
 
@@ -213,9 +215,9 @@ public class WarController implements Initializable {
 		}
 	}
 	
-		// Dövüşme metodu.
+		//	Dövüşme metodu.
 	public static void fight(Goblin goblin, Skeleton skeleton, Zombie zombie, Player player) {
-		
+		System.out.println(durum);
 		if(durum==1) {
 			goblin.setHealth((goblin.getHealth()+goblin.getArmor()) - player.getDamage());
 			player.setHealth((player.getHealth() + player.getArmor()) - goblin.getDamage());
@@ -227,13 +229,17 @@ public class WarController implements Initializable {
 		else if(durum==3) {
 			zombie.setHealth((zombie.getHealth() + zombie.getArmor()) - player.getDamage());
 			player.setHealth((player.getHealth() + player.getArmor()) - zombie.getDamage());
-			durum=1;
+			durum=0;
 		}
 		durum++;
 	}
 
 		//	Tavern tuşuna basılma durumunda çağrılan metod.
 	public void goStore(ActionEvent event) throws IOException {
+		
+		goblin.setHealth(100);
+		zombie.setHealth(100);
+		skeleton.setHealth(100);
 		
 		String string = player.getHealth() + "," + player.getArmor() + "," + player.getDamage() + "," + player.getName()
 				+ "," + player.getGold();
