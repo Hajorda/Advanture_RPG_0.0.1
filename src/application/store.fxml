@@ -91,32 +91,23 @@
       <Button layoutX="160.0" layoutY="551.0" mnemonicParsing="false" onAction="#buyPotion2Button" text="Buy" />
       <Label id="slot2Potion" layoutX="183.0" layoutY="485.0" text="120 Gold" />
       <Label id="slot3_2Cost" layoutX="142.0" layoutY="527.0" text="100 HP restore" />
-      <Label layoutX="852.0" layoutY="196.0" prefHeight="147.0" prefWidth="232.0" text="Health:">
+      <Label layoutX="869.0" layoutY="203.0" prefHeight="147.0" prefWidth="232.0" text="Health:">
+         <font>
+            <Font name="System Bold" size="54.0" />
+         </font></Label>
+      <Label id="healthLabel" fx:id="healthLabel" layoutX="1063.0" layoutY="203.0" prefHeight="155.0" prefWidth="282.0" text="Label" textAlignment="RIGHT">
          <font>
             <Font size="70.0" />
          </font></Label>
-      <Label id="healthLabel" fx:id="healthLabel" layoutX="1072.0" layoutY="196.0" prefHeight="155.0" prefWidth="282.0" text="Label" textAlignment="RIGHT">
+      <Label id="damageLabel" fx:id="damageLabel" layoutX="1097.0" layoutY="407.0" prefHeight="103.0" prefWidth="232.0" text="Label">
          <font>
             <Font size="70.0" />
          </font></Label>
-      <Label layoutX="855.0" layoutY="381.0" prefHeight="155.0" prefWidth="303.0" text="Damage:">
-         <font>
-            <Font size="70.0" />
-         </font></Label>
-      <Label id="damageLabel" fx:id="damageLabel" layoutX="1122.0" layoutY="407.0" prefHeight="103.0" prefWidth="232.0" text="Label">
-         <font>
-            <Font size="70.0" />
-         </font></Label>
-     
-      <Label layoutX="855.0" layoutY="285.0" prefHeight="177.0" prefWidth="226.0" text="Armor:">
-         <font>
-            <Font size="70.0" />
-         </font></Label>
-      <Label id="armorLabel" fx:id="armorLabel" layoutX="1072.0" layoutY="310.0" prefHeight="126.0" prefWidth="282.0" text="Label">
+      <Label id="armorLabel" fx:id="armorLabel" layoutX="1054.0" layoutY="311.0" prefHeight="126.0" prefWidth="282.0" text="Label">
          <font>
             <Font size="69.0" />
          </font></Label>
-      <Button layoutX="714.0" layoutY="8.0" mnemonicParsing="false" onAction="#goBattlefield" prefHeight="66.0" prefWidth="271.0" text="War">
+      <Button layoutX="719.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBattlefield" prefHeight="57.0" prefWidth="274.0" text="War">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -125,14 +116,24 @@
             <Font name="System Bold" size="55.0" />
          </font>
       </Label>
-      <Label layoutX="862.0" layoutY="467.0" prefHeight="155.0" prefWidth="303.0" text="Gold:">
+      <Label layoutX="870.0" layoutY="467.0" prefHeight="155.0" prefWidth="303.0" text="Gold:">
+         <font>
+            <Font name="System Bold" size="54.0" />
+         </font>
+      </Label>
+      <Label id="damageLabel" fx:id="goldLabel" layoutX="1022.0" layoutY="494.0" prefHeight="103.0" prefWidth="232.0" text="Label">
          <font>
             <Font size="70.0" />
          </font>
       </Label>
-      <Label id="damageLabel" fx:id="goldLabel" layoutX="1057.0" layoutY="493.0" prefHeight="103.0" prefWidth="232.0" text="Label">
+      <Label layoutX="870.0" layoutY="300.0" prefHeight="147.0" prefWidth="232.0" text="Armor:">
          <font>
-            <Font size="70.0" />
+            <Font name="System Bold" size="54.0" />
+         </font>
+      </Label>
+      <Label layoutX="870.0" layoutY="381.0" prefHeight="155.0" prefWidth="303.0" text="Damage:">
+         <font>
+            <Font name="System Bold" size="54.0" />
          </font>
       </Label>
    </children>
