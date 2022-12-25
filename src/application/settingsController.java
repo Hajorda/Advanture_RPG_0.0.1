@@ -134,7 +134,7 @@ public class settingsController implements Initializable {
 			public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
 
 				volume = musicSlider.getValue() * 0.01;
-				//System.out.println("Volume " + volume);
+				System.out.println("Volume " + volume);
 				// mediaPlayer.setVolume(volume);
 
 			}

@@ -170,7 +170,9 @@ public class MainController extends Main implements Initializable {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setFullScreen(true);
+		//stage.setFullScreen(true);
+		stage.setHeight(760);
+		stage.setWidth(1300);
 		stage.show();
 	}
 
