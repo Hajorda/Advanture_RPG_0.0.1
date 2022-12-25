@@ -5,62 +5,119 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Store">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Store">
    <children>
-      <ImageView fitHeight="432.0" fitWidth="721.0" layoutX="-47.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@tavernPanel(1).png" />
          </image>
       </ImageView>
-      <Button layoutX="40.0" layoutY="115.0" mnemonicParsing="false" onAction="#buySword1Button" text="Buy" />
-      <Button layoutX="103.0" layoutY="115.0" mnemonicParsing="false" onAction="#buySword2Button" text="Buy" />
-      <Button layoutX="167.0" layoutY="115.0" mnemonicParsing="false" onAction="#buySword3Button" text="Buy" />
-      <Button layoutX="228.0" layoutY="115.0" mnemonicParsing="false" onAction="#buySword4Button" text="Buy" />
+      <Button layoutX="102.0" layoutY="477.0" mnemonicParsing="false" onAction="#buySword1Button" text="Buy" />
+      <Button layoutX="251.0" layoutY="477.0" mnemonicParsing="false" onAction="#buySword2Button" text="Buy" />
+      <Button layoutX="407.0" layoutY="477.0" mnemonicParsing="false" onAction="#buySword3Button" text="Buy" />
+      <Button layoutX="551.0" layoutY="483.0" mnemonicParsing="false" onAction="#buySword4Button" text="Buy" />
       <ImageView id="slot1_1image" fitHeight="70.0" fitWidth="54.0" layoutX="42.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView id="slot1_2image" fitHeight="70.0" fitWidth="54.0" layoutX="103.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView id="slot1_3image" fitHeight="70.0" fitWidth="54.0" layoutX="167.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView id="slot1_4image" fitHeight="70.0" fitWidth="54.0" layoutX="228.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="40.0" layoutY="236.0" mnemonicParsing="false" onAction="#buyArmor1Button" text="Buy" />
-      <Button layoutX="103.0" layoutY="236.0" mnemonicParsing="false" onAction="#buyArmor2Button" text="Buy" />
-      <Button layoutX="167.0" layoutY="236.0" mnemonicParsing="false" onAction="#buyArmor3Button" text="Buy" />
-      <Button layoutX="228.0" layoutY="236.0" mnemonicParsing="false" onAction="#buyArmor4Button" text="Buy" />
-      <ImageView id="slot2_1image" fitHeight="70.0" fitWidth="54.0" layoutX="40.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView id="slot2_2image" fitHeight="70.0" fitWidth="54.0" layoutX="103.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView id="slot2_3image" fitHeight="70.0" fitWidth="54.0" layoutX="167.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView id="slot2_4image" fitHeight="70.0" fitWidth="54.0" layoutX="228.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="42.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyPotion1Button" text="Buy" />
-      <ImageView id="slot3_1image" fitHeight="70.0" fitWidth="54.0" layoutX="42.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" />
-      <Label id="slot1DamageLabel" layoutX="40.0" layoutY="98.0" text="Label" />
-      <Label id="slot1_1Cost" layoutX="67.0" layoutY="98.0" text="Label" />
-      <Label id="slot2DamageLabel" layoutX="103.0" layoutY="98.0" text="Label" />
-      <Label id="slot1_2Cost" layoutX="130.0" layoutY="98.0" text="Label" />
-      <Label id="slot3DamageLabel" layoutX="167.0" layoutY="98.0" text="Label" />
-      <Label id="slot1_3Cost" layoutX="194.0" layoutY="98.0" text="Label" />
-      <Label id="slot4DamageLabel" layoutX="228.0" layoutY="98.0" text="Label" />
-      <Label id="slot1_4Cost" layoutX="255.0" layoutY="98.0" text="Label" />
-      <Label id="slot1ArmorLabel" layoutX="40.0" layoutY="219.0" text="Label" />
-      <Label id="slot2_1Cost" layoutX="67.0" layoutY="219.0" text="Label" />
-      <Label id="slot2ArmorLabel" layoutX="103.0" layoutY="219.0" text="Label" />
-      <Label id="slot2_2Cost" layoutX="130.0" layoutY="219.0" text="Label" />
-      <Label id="slot3ArmorLabel" layoutX="167.0" layoutY="219.0" text="Label" />
-      <Label id="slot2_3Cost" layoutX="194.0" layoutY="219.0" text="Label" />
-      <Label id="slot4ArmorLabel" layoutX="228.0" layoutY="219.0" text="Label" />
-      <Label id="slot2_4Cost" layoutX="255.0" layoutY="219.0" text="Label" />
-      <Label id="slot1Potion" layoutX="42.0" layoutY="343.0" text="Label" />
-      <Label id="slot3_1Cost" layoutX="69.0" layoutY="343.0" text="Label" />
-      <Button layoutX="120.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyPotion2Button" text="Buy" />
-      <ImageView id="slot3_2image" fitHeight="70.0" fitWidth="54.0" layoutX="120.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true" />
-      <Label id="slot2Potion" layoutX="117.0" layoutY="343.0" text="Label" />
-      <Label id="slot3_2Cost" layoutX="147.0" layoutY="343.0" text="Label" />
-      <Label layoutX="411.0" layoutY="211.0" prefHeight="17.0" prefWidth="64.0" text="Health:" />
-      <Label id="healthLabel" layoutX="505.0" layoutY="211.0" text="Label" />
-      <Label layoutX="411.0" layoutY="232.0" prefHeight="17.0" prefWidth="64.0" text="Damage:" />
-      <Label id="damageLabel" layoutX="505.0" layoutY="232.0" text="Label" />
-      <ImageView fitHeight="124.0" fitWidth="99.0" layoutX="411.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="99.0" layoutY="655.0" mnemonicParsing="false" onAction="#buyArmor1Button" text="Buy" />
+      <Button layoutX="252.0" layoutY="655.0" mnemonicParsing="false" onAction="#buyArmor2Button" text="Buy" />
+      <Button layoutX="398.0" layoutY="655.0" mnemonicParsing="false" onAction="#buyArmor3Button" text="Buy" />
+      <Button layoutX="551.0" layoutY="655.0" mnemonicParsing="false" onAction="#buyArmor4Button" text="Buy" />
+      <ImageView id="slot2_1image" fitHeight="95.0" fitWidth="112.0" layoutX="70.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sword1.png" />
+         </image></ImageView>
+      <ImageView id="slot2_2image" fitHeight="96.0" fitWidth="94.0" layoutX="213.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sword2.png" />
+         </image></ImageView>
+      <ImageView id="slot2_3image" fitHeight="115.0" fitWidth="94.0" layoutX="370.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sword3.png" />
+         </image></ImageView>
+      <ImageView id="slot2_4image" fitHeight="111.0" fitWidth="94.0" layoutX="522.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sword4.png" />
+         </image></ImageView>
+      <Button layoutX="99.0" layoutY="827.0" mnemonicParsing="false" onAction="#buyPotion1Button" text="Buy" />
+      <ImageView id="slot3_1image" fitHeight="86.0" fitWidth="54.0" layoutX="104.0" layoutY="701.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@medPotion.png" />
+         </image></ImageView>
+      <Label id="slot1DamageLabel" layoutX="53.0" layoutY="450.0" text="Label" />
+      <Label id="slot1_1Cost" layoutX="153.0" layoutY="450.0" text="Label" />
+      <Label id="slot2DamageLabel" layoutX="207.0" layoutY="450.0" text="Label" />
+      <Label id="slot1_2Cost" layoutX="305.0" layoutY="450.0" text="Label" />
+      <Label id="slot3DamageLabel" layoutX="353.0" layoutY="450.0" text="Label" />
+      <Label id="slot1_3Cost" layoutX="454.0" layoutY="450.0" text="Label" />
+      <Label id="slot4DamageLabel" layoutX="500.0" layoutY="450.0" text="Label" />
+      <Label id="slot1_4Cost" layoutX="603.0" layoutY="450.0" text="Label" />
+      <Label id="slot1ArmorLabel" layoutX="94.0" layoutY="617.0" text="Label" />
+      <Label id="slot2_1Cost" layoutX="121.0" layoutY="617.0" text="Label" />
+      <Label id="slot2ArmorLabel" layoutX="207.0" layoutY="617.0" text="Label" />
+      <Label id="slot2_2Cost" layoutX="307.0" layoutY="617.0" text="Label" />
+      <Label id="slot3ArmorLabel" layoutX="353.0" layoutY="617.0" text="Label" />
+      <Label id="slot2_3Cost" layoutX="454.0" layoutY="617.0" text="Label" />
+      <Label id="slot4ArmorLabel" layoutX="500.0" layoutY="617.0" text="Label" />
+      <Label id="slot2_4Cost" layoutX="603.0" layoutY="617.0" text="Label" />
+      <Label id="slot1Potion" layoutX="56.0" layoutY="792.0" text="Label" />
+      <Label id="slot3_1Cost" layoutX="153.0" layoutY="792.0" text="Label" />
+      <Button layoutX="260.0" layoutY="827.0" mnemonicParsing="false" onAction="#buyPotion2Button" text="Buy" />
+      <ImageView id="slot3_2image" fitHeight="86.0" fitWidth="67.0" layoutX="237.0" layoutY="710.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bigPotion.png" />
+         </image></ImageView>
+      <Label id="slot2Potion" layoutX="207.0" layoutY="792.0" text="Label" />
+      <Label id="slot3_2Cost" layoutX="305.0" layoutY="792.0" text="Label" />
+      <Label layoutX="1317.0" layoutY="379.0" prefHeight="177.0" prefWidth="232.0" text="Health:">
+         <font>
+            <Font size="70.0" />
+         </font></Label>
+      <Label id="healthLabel" fx:id="healthLabel" layoutX="1575.0" layoutY="390.0" prefHeight="155.0" prefWidth="282.0" text="Label" textAlignment="RIGHT">
+         <font>
+            <Font size="70.0" />
+         </font></Label>
+      <Label layoutX="1317.0" layoutY="723.0" prefHeight="155.0" prefWidth="303.0" text="Damage:">
+         <font>
+            <Font size="70.0" />
+         </font></Label>
+      <Label id="damageLabel" fx:id="damageLabel" layoutX="1620.0" layoutY="744.0" prefHeight="103.0" prefWidth="232.0" text="Label">
+         <font>
+            <Font size="70.0" />
+         </font></Label>
+      <ImageView fitHeight="86.0" fitWidth="94.0" layoutX="83.0" layoutY="531.0" pickOnBounds="true" preserveRatio="true" />
      
-      <Label layoutX="411.0" layoutY="254.0" prefHeight="17.0" prefWidth="64.0" text="Armor:" />
-      <Label id="armorLabel" layoutX="505.0" layoutY="254.0" text="Label" />
-      <Button layoutX="501.0" layoutY="330.0" mnemonicParsing="false" onAction="#goBattlefield" text="War" />
+      <Label layoutX="1317.0" layoutY="537.0" prefHeight="177.0" prefWidth="226.0" text="Armor:">
+         <font>
+            <Font size="70.0" />
+         </font></Label>
+      <Label id="armorLabel" fx:id="armorLabel" layoutX="1575.0" layoutY="571.0" prefHeight="126.0" prefWidth="282.0" text="Label">
+         <font>
+            <Font size="69.0" />
+         </font></Label>
+      <Button layoutX="1048.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBattlefield" prefHeight="96.0" prefWidth="437.0" text="War" />
+      <Label fx:id="nameLabel" layoutX="796.0" layoutY="162.0" text="Label">
+         <font>
+            <Font name="System Bold" size="55.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="86.0" fitWidth="94.0" layoutX="221.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@armor2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="86.0" fitWidth="94.0" layoutX="373.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@armor3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="86.0" fitWidth="94.0" layoutX="522.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@armor4.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

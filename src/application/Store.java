@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 
@@ -31,6 +32,15 @@ public class Store implements Initializable{
 	@FXML
 	private Parent root;
 
+	@FXML
+	private Label nameLabel;
+	@FXML
+	private Label healthLabel;
+	@FXML
+	private Label armorLabel;
+	@FXML
+	private Label damageLabel;
+	
 	
 	
 	public  void readMethod() {
@@ -153,14 +163,20 @@ public class Store implements Initializable{
 		
 	}
 
+	public void setStats() {
+		armorLabel.setText(player.getArmor()+"");
+		damageLabel.setText(player.getDamage()+"");
+	}
 
 
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		readMethod();
-		// TODO Auto-generated method stub
-		
+
+		nameLabel.setText(player.getName());
+		healthLabel.setText(player.getHealth()+"");
+		setStats();
 	}
 
 }
