@@ -35,7 +35,7 @@ public class Store implements Initializable{
 	
 	public  void readMethod() {
 		String info;
-		File file = new File("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
+		File file = new File("info.txt");
 		try {
 			Scanner scanner = new Scanner(file);	
 			info = scanner.nextLine();
@@ -132,7 +132,7 @@ public class Store implements Initializable{
 	public void bilmem() throws IOException{
 		
 		String string2 =player.getHealth()+","+  player.getArmor()+","+ player.getDamage()+"," + player.getName() +","+  player.getGold();
-		Path path2 = Paths.get("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
+		Path path2 = Paths.get("info.txt");
 		Files.writeString(path2, string2, StandardCharsets.UTF_8);
 		
 	}

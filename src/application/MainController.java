@@ -1,7 +1,7 @@
 package application;
 
 import java.io.File;
-import java.io.IOException; 
+import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -25,10 +25,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-
 public class MainController extends Main implements Initializable {
-
-	
 
 	static String name;
 	static String gender;
@@ -57,7 +54,6 @@ public class MainController extends Main implements Initializable {
 	private ImageView apimage;
 	@FXML
 	private ChoiceBox<String> boxrace, boxclass, boxjob;
-	
 
 	public void backToSettings(ActionEvent event) throws IOException {
 
@@ -143,43 +139,42 @@ public class MainController extends Main implements Initializable {
 			warning.setText("Karakterin meslegini belirlemelisin");
 		}
 
-		//else {
-			System.out.println("----------------------------");
-			System.out.println("Name: " + namefield.getText());
-			System.out.println("Gender: " + gender);
-			System.out.println("Age: " + age);
-			System.out.println("Race: " + boxrace.getValue());
-			System.out.println("Class: " + boxclass.getValue());
-			System.out.println("Job: " + boxjob.getValue());
-			System.out.println("----------------------------");
-			System.out.println("");
-			System.out.println("Karakter olusturuldu oyun baslatılıyor!");
+		// else {
+		System.out.println("----------------------------");
+		System.out.println("Name: " + namefield.getText());
+		System.out.println("Gender: " + gender);
+		System.out.println("Age: " + age);
+		System.out.println("Race: " + boxrace.getValue());
+		System.out.println("Class: " + boxclass.getValue());
+		System.out.println("Job: " + boxjob.getValue());
+		System.out.println("----------------------------");
+		System.out.println("");
+		System.out.println("Karakter olusturuldu oyun baslatılıyor!");
 
-			name = namefield.getText();
-			race = boxrace.getValue();
-			classlar = boxclass.getValue();
-			job = boxjob.getValue();
-			
-			Player player = new Player(100, 10, 10, name,100);
-			
-			String string =player.getHealth()+","+  player.getArmor()+","+ player.getDamage()+"," + player.getName() +","+  player.getGold();
-			Path path = Paths.get("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
-			Files.writeString(path, string, StandardCharsets.UTF_8);
-			
-			
+		name = namefield.getText();
+		race = boxrace.getValue();
+		classlar = boxclass.getValue();
+		job = boxjob.getValue();
 
-			// Store Sahnesine gitme kodu
-			
-			Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
-			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-		
+		Player player = new Player(100, 10, 10, name, 100);
+
+		String string = player.getHealth() + "," + player.getArmor() + "," + player.getDamage() + "," + player.getName()
+				+ "," + player.getGold();
+		Path path = Paths.get("info.txt");
+		Files.writeString(path, string, StandardCharsets.UTF_8);
+
+		// Store Sahnesine gitme kodu
+
+		Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+
 //			Location.locationControl();
-		
-		//}
-			
+
+		// }
+
 	}
 
 	private String[] races = { "Human", "Elf", "Ork", "Urk-Hai", "Dwarf" };
@@ -201,6 +196,5 @@ public class MainController extends Main implements Initializable {
 
 /*
  * <3 <3 <3 <3 Eren seni seviyorum utanıyorum o yüzden aşkımı burdan ilan
- * ediyorum <3 <3 <3
- * ben de seni sevyiorum ama söylemeue utanıyordum ^^
+ * ediyorum <3 <3 <3 ben de seni sevyiorum ama söylemeue utanıyordum ^^
  */
