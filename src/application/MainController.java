@@ -99,9 +99,9 @@ public class MainController extends Main implements Initializable {
 
 	public void setAppearance(ActionEvent event) {
 
-		Image imageap1 = new Image(getClass().getResourceAsStream("ap1.png"));
-		Image imageap2 = new Image(getClass().getResourceAsStream("ap2.jpg"));
-		Image imageap3 = new Image(getClass().getResourceAsStream("ap3.png"));
+		Image imageap1 = new Image(getClass().getResourceAsStream("adamHipi.png"));
+		Image imageap2 = new Image(getClass().getResourceAsStream("adamOsmanlı.png"));
+		Image imageap3 = new Image(getClass().getResourceAsStream("adam0.png"));
 
 		if (ap1.isSelected()) {
 			appearance = 1;
@@ -140,14 +140,14 @@ public class MainController extends Main implements Initializable {
 			warning.setText("Karakterin meslegini belirlemelisin");
 		}
 
-		// else {
+		 //else {
 		System.out.println("----------------------------");
 		System.out.println("Name: " + namefield.getText());
 		System.out.println("Gender: " + gender);
 		System.out.println("Age: " + age);
 		System.out.println("Race: " + boxrace.getValue());
 		System.out.println("Class: " + boxclass.getValue());
-		//System.out.println("Job: " + boxjob.getValue());
+		System.out.println("Job: " + boxjob.getValue());
 		System.out.println("----------------------------");
 		System.out.println("");
 		System.out.println("Karakter olusturuldu oyun baslatılıyor!");

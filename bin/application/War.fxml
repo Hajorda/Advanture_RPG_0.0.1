@@ -41,7 +41,7 @@
          <font>
             <Font size="26.0" />
          </font></Label>
-      <ProgressBar fx:id="healthBar" layoutX="549.0" layoutY="368.0" prefHeight="30.0" prefWidth="183.0" progress="1.0" />
+      <ProgressBar fx:id="healthBar" layoutX="548.0" layoutY="373.0" prefHeight="30.0" prefWidth="183.0" progress="1.0" />
       <Label fx:id="damageData" layoutX="161.0" layoutY="506.0" prefHeight="17.0" prefWidth="68.0" text="0">
          <font>
             <Font size="32.0" />
@@ -67,11 +67,11 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="consoleData" layoutX="805.0" layoutY="476.0" prefHeight="108.0" prefWidth="449.0" text="ConsE">
+      <Label fx:id="consoleData" layoutX="818.0" layoutY="487.0" prefHeight="108.0" prefWidth="449.0" text="ConsE">
          <font>
-            <Font size="34.0" />
+            <Font size="20.0" />
          </font></Label>
-      <Button layoutX="704.0" mnemonicParsing="false" onAction="#goStore" prefHeight="51.0" prefWidth="296.0" text="TAVERN">
+      <Button layoutX="704.0" layoutY="4.0" mnemonicParsing="false" onAction="#goStore" prefHeight="51.0" prefWidth="296.0" text="TAVERN">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -88,7 +88,7 @@
       <ProgressBar fx:id="healthBar2" layoutX="560.0" layoutY="104.0" prefHeight="33.0" prefWidth="168.0" progress="1.0" />
       <ProgressBar fx:id="healthBar3" layoutX="869.0" layoutY="101.0" prefHeight="31.0" prefWidth="173.0" progress="1.0" />
       <Label fx:id="goblinLabel" layoutX="308.0" layoutY="86.0" text="enemy" />
-      <Label fx:id="skeletonLabel" layoutX="626.0" layoutY="69.0" text="enemy" />
+      <Label fx:id="skeletonLabel" layoutX="625.0" layoutY="90.0" text="enemy" />
       <Label fx:id="zombieLabel" layoutX="944.0" layoutY="86.0" text="enemy" />
       <Label fx:id="goblinLabel1" layoutX="241.0" layoutY="111.0" text="HP" />
       <Label fx:id="goblinHP" layoutX="333.0" layoutY="111.0" text="HealthPoint" />
@@ -96,7 +96,7 @@
       <Label fx:id="SkeletonHP" layoutX="655.0" layoutY="111.0" text="HealthPoint" />
       <Label fx:id="goblinLabel111" layoutX="880.0" layoutY="109.0" text="HP" />
       <Label fx:id="zombieHP" layoutX="978.0" layoutY="108.0" text="HealthPoint" />
-      <Label fx:id="goblinLabel12" layoutX="562.0" layoutY="375.0" text="HP" />
-      <Label fx:id="mainHP" layoutX="661.0" layoutY="375.0" text="HealthPoint" />
+      <Label fx:id="goblinLabel12" layoutX="561.0" layoutY="380.0" text="HP" />
+      <Label fx:id="mainHP" layoutX="660.0" layoutY="380.0" text="HealthPoint" />
    </children>
 </AnchorPane>
