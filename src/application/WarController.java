@@ -330,8 +330,6 @@ public class WarController implements Initializable {
 		healthBar1.setProgress((goblin.getHealth() / (double) 100));
 		healthBar2.setProgress((skeleton.getHealth() / (double) 100));
 		healthBar3.setProgress((zombie.getHealth() / (double) 100));
-		
-		fight(goblin, skeleton, zombie, player);
 
 	}
 }
