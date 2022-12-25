@@ -167,11 +167,11 @@ public class WarController implements Initializable {
 
 	// Dövüşme metodu.
 
-	public void Combat(MouseEvent event) throws IOException {
+	public void Combat(ActionEvent event) throws IOException {
 
 		speak();
-		fight(goblin, skeleton, zombie, player);
-		player.setHealth(player.getHealth());
+		//fight(goblin, skeleton, zombie, player);
+		//player.setHealth(player.getHealth());
 		// gunceleme
 		// healthBar,healthBar1,healthBar2,healthBar3
 		//healthBar.setProgress((player.getHealth() / (double) 100));

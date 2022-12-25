@@ -15,7 +15,7 @@
             <Image url="@battlefieldPanelAyarlanmış.png" />
          </image>
       </ImageView>
-      <Button layoutX="614.0" layoutY="251.0" mnemonicParsing="false" onAction="#Combat" onMouseClicked="#Combat" prefHeight="121.0" prefWidth="233.0" text="Hit" />
+      <Button layoutX="614.0" layoutY="251.0" mnemonicParsing="false" onAction="#Combat" prefHeight="121.0" prefWidth="233.0" text="Hit" />
       <ImageView fx:id="pic" fitHeight="410.0" fitWidth="450.0" layoutX="750.0" layoutY="649.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@adam0.png" />
