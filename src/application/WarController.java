@@ -170,11 +170,11 @@ public class WarController implements Initializable {
 	public void Combat(ActionEvent event) throws IOException {
 
 		speak();
-		//fight(goblin, skeleton, zombie, player);
-		//player.setHealth(player.getHealth());
+		fight(goblin, skeleton, zombie, player);
+		player.setHealth(player.getHealth());
 		// gunceleme
-		// healthBar,healthBar1,healthBar2,healthBar3
-		//healthBar.setProgress((player.getHealth() / (double) 100));
+		 //healthBar,healthBar1,healthBar2,healthBar3
+		 healthBar.setProgress((player.getHealth() / (double) 100));
 		healthBar1.setProgress((goblin.getHealth() / (double) 100));
 		healthBar2.setProgress((skeleton.getHealth() / (double) 100));
 		healthBar3.setProgress((zombie.getHealth() / (double) 100));
