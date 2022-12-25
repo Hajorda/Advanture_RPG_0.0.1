@@ -113,7 +113,7 @@ public class Store implements Initializable{
 	public void buyArmor(int index) {
 		if(index*50 <= player.getGold()) {
 			player.setGold(player.getGold()-index*50);
-			player.setArmor(player.getArmor()+(index*20));
+			player.setArmor(player.getArmor()+(index*3));
 			setStats(); 
 		}
 		else {

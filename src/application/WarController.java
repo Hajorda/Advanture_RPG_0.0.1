@@ -221,22 +221,28 @@ public class WarController implements Initializable {
 	public static void fight(Goblin goblin, Skeleton skeleton, Zombie zombie, Player player) {
 		
 		if(durum==1) {
-			if(goblin.getArmor()<player.getDamage()) {
+			if((goblin.getArmor()<player.getDamage())) {
 				goblin.setHealth(goblin.getHealth() - (player.getDamage()-goblin.getArmor()));
-				player.setHealth((player.getHealth() + player.getArmor()) - goblin.getDamage());
+				if((goblin.getDamage()-player.getArmor()>=0)) {
+					player.setHealth((player.getHealth()  - (goblin.getDamage()- player.getArmor())));
+				}
 			}
 		}
 		else if(durum==2) {
 			if(skeleton.getArmor()<player.getDamage()) {
-				skeleton.setHealth((skeleton.getHealth()+skeleton.getArmor()) - player.getDamage());
-				player.setHealth((player.getHealth() + player.getArmor()) - skeleton.getDamage());
+				skeleton.setHealth(skeleton.getHealth() - (player.getDamage()-skeleton.getArmor()));
+				if((skeleton.getDamage()-player.getArmor()>=0)) {
+					player.setHealth((player.getHealth()  - (skeleton.getDamage()- player.getArmor())));
+				}
 			}
 		}
 		else if(durum==3) {
 
 			if(zombie.getArmor()<player.getDamage()) {
-				zombie.setHealth((zombie.getHealth() + zombie.getArmor()) - player.getDamage());
-				player.setHealth((player.getHealth() + player.getArmor()) - zombie.getDamage());
+				zombie.setHealth(zombie.getHealth()  - (player.getDamage()- zombie.getArmor()));
+				if((zombie.getDamage()-player.getArmor()>=0)) {	
+					player.setHealth(player.getHealth()  - (zombie.getDamage()- player.getArmor()));
+				}
 			}
 			durum=0;
 
