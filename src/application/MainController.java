@@ -140,7 +140,7 @@ public class MainController extends Main implements Initializable {
 			warning.setText("Karakterin meslegini belirlemelisin");
 		}
 
-		 //else {
+		 else {
 		System.out.println("----------------------------");
 		System.out.println("Name: " + namefield.getText());
 		System.out.println("Gender: " + gender);
@@ -175,13 +175,15 @@ public class MainController extends Main implements Initializable {
 		stage.setWidth(1300);
 		stage.show();
 	}
-
+	}
 	private String[] races = { "Human", "Elf", "Ork", "Urk-Hai", "Dwarf" };
 	private String[] claslar = { "Swordman", "Mage", "Healer"};
+	private String[] jobs = { "Oduncu", "Madenci", "Çiftçi"};
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		boxrace.getItems().addAll(races);
 		boxclass.getItems().addAll(claslar);
+		boxjob.getItems().addAll(jobs);
 	}
 }
