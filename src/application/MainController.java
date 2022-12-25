@@ -158,7 +158,7 @@ public class MainController extends Main implements Initializable {
 		classlar = boxclass.getValue();
 		job = boxjob.getValue();
 
-		Player player = new Player(100, 10, 10, name, 100);
+		Player player = new Player(100, 5, 10, name, 100);
 
 		String string = player.getHealth() + "," + player.getArmor() + "," + player.getDamage() + "," + player.getName()
 				+ "," + player.getGold();

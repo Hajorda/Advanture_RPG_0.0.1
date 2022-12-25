@@ -195,7 +195,7 @@ public class WarController implements Initializable {
 			 (Stage) ((Node) event.getSource()).getScene().getWindow(); scene = new
 			 Scene(root); stage.setScene(scene); stage.show();
 			 
-		} else if (!(goblin.getHealth() + skeleton.getHealth() + zombie.getHealth() > 0)) {
+		} else if (goblin.getHealth()<=0 && skeleton.getHealth()<=0 && zombie.getHealth()<=0) {
 
 			getReward(player);
 			increaseLevel();
@@ -217,19 +217,35 @@ public class WarController implements Initializable {
 	public static void fight(Goblin goblin, Skeleton skeleton, Zombie zombie, Player player) {
 		
 		if(durum==1) {
-			goblin.setHealth((goblin.getHealth()+goblin.getArmor()) - player.getDamage());
-			player.setHealth((player.getHealth() + player.getArmor()) - goblin.getDamage());
+			if(goblin.getArmor()<player.getDamage()) {
+				goblin.setHealth(goblin.getHealth() - (player.getDamage()-goblin.getArmor()));
+				player.setHealth((player.getHealth() + player.getArmor()) - goblin.getDamage());
+			}
 		}
 		else if(durum==2) {
-			skeleton.setHealth((skeleton.getHealth()+skeleton.getArmor()) - player.getDamage());
-			player.setHealth((player.getHealth() + player.getArmor()) - skeleton.getDamage());
+			if(skeleton.getArmor()<player.getDamage()) {
+				skeleton.setHealth((skeleton.getHealth()+skeleton.getArmor()) - player.getDamage());
+				player.setHealth((player.getHealth() + player.getArmor()) - skeleton.getDamage());
+			}
 		}
 		else if(durum==3) {
+<<<<<<< Updated upstream
 			zombie.setHealth((zombie.getHealth() + zombie.getArmor()) - player.getDamage());
 			player.setHealth((player.getHealth() + player.getArmor()) - zombie.getDamage());
 			durum=1;
+=======
+			if(zombie.getArmor()<player.getDamage()) {
+				zombie.setHealth((zombie.getHealth() + zombie.getArmor()) - player.getDamage());
+				player.setHealth((player.getHealth() + player.getArmor()) - zombie.getDamage());
+			}
+			durum=0;
+>>>>>>> Stashed changes
 		}
 		durum++;
+		System.out.println("Karakter "+player.getHealth());
+		System.out.println("ZOmbie "+zombie.getHealth());
+		System.out.println("Skeleton "+skeleton.getHealth());
+		System.out.println("Goblin "+goblin.getHealth());
 	}
 
 		//	Tavern tuşuna basılma durumunda çağrılan metod.
