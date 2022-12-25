@@ -70,27 +70,27 @@
          <image>
             <Image url="@bigPotion.png" />
          </image></ImageView>
-      <Label id="slot1DamageLabel" layoutX="35.0" layoutY="302.0" text="50 Gold" />
-      <Label id="slot1_1Cost" layoutX="72.0" layoutY="302.0" text="+30 DMG" />
-      <Label id="slot2DamageLabel" layoutX="133.0" layoutY="302.0" text="100 Gold" />
-      <Label id="slot1_2Cost" layoutX="181.0" layoutY="302.0" text="+60 DMG" />
-      <Label id="slot3DamageLabel" layoutX="232.0" layoutY="302.0" text="150 Gold" />
-      <Label id="slot1_3Cost" layoutX="278.0" layoutY="302.0" text="+90 DMG" />
-      <Label id="slot4DamageLabel" layoutX="329.0" layoutY="302.0" text="200 Gold" />
-      <Label id="slot1_4Cost" layoutX="380.0" layoutY="303.0" text="+120 DMG" />
-      <Label id="slot1ArmorLabel" layoutX="35.0" layoutY="416.0" text="50 Gold" />
-      <Label id="slot2_1Cost" layoutX="80.0" layoutY="416.0" text="+20 ARMR" />
-      <Label id="slot2ArmorLabel" layoutX="138.0" layoutY="416.0" text="100 Gold" />
-      <Label id="slot2_2Cost" layoutX="178.0" layoutY="416.0" text="+40 ARMR" />
-      <Label id="slot3ArmorLabel" layoutX="246.0" layoutY="419.0" text="150 Gold" />
-      <Label id="slot2_3Cost" layoutX="330.0" layoutY="416.0" text="+60 ARMR" />
-      <Label id="slot4ArmorLabel" layoutX="390.0" layoutY="419.0" text="200 Gold" />
+      <Label id="slot1DamageLabel" layoutX="82.0" layoutY="241.0" text="50 Gold" />
+      <Label id="slot1_1Cost" layoutX="33.0" layoutY="295.0" text="+30 DMG" />
+      <Label id="slot2DamageLabel" layoutX="174.0" layoutY="241.0" text="100 Gold" />
+      <Label id="slot1_2Cost" layoutX="134.0" layoutY="295.0" text="+60 DMG" />
+      <Label id="slot3DamageLabel" layoutX="274.0" layoutY="241.0" text="150 Gold" />
+      <Label id="slot1_3Cost" layoutX="236.0" layoutY="295.0" text="+90 DMG" />
+      <Label id="slot4DamageLabel" layoutX="377.0" layoutY="241.0" text="200 Gold" />
+      <Label id="slot1_4Cost" layoutX="340.0" layoutY="295.0" text="+120 DMG" />
+      <Label id="slot1ArmorLabel" layoutX="61.0" layoutY="429.0" text="50 Gold" />
+      <Label id="slot2_1Cost" layoutX="49.0" layoutY="392.0" text="+20 ARMR" />
+      <Label id="slot2ArmorLabel" layoutX="154.0" layoutY="431.0" text="100 Gold" />
+      <Label id="slot2_2Cost" layoutX="152.0" layoutY="392.0" text="+40 ARMR" />
+      <Label id="slot3ArmorLabel" layoutX="264.0" layoutY="428.0" text="150 Gold" />
+      <Label id="slot2_3Cost" layoutX="259.0" layoutY="392.0" text="+60 ARMR" />
+      <Label id="slot4ArmorLabel" layoutX="356.0" layoutY="431.0" text="200 Gold" />
       <Label id="slot2_4Cost" layoutX="571.0" layoutY="617.0" text="+80 ARMR" />
-      <Label id="slot1Potion" layoutX="35.0" layoutY="502.0" text="30 Gold" />
-      <Label id="slot3_1Cost" layoutX="41.0" layoutY="528.0" text="25 HP restore" />
+      <Label id="slot1Potion" layoutX="90.0" layoutY="477.0" text="30 Gold" />
+      <Label id="slot3_1Cost" layoutX="33.0" layoutY="527.0" text="25 HP restore" />
       <Button layoutX="160.0" layoutY="551.0" mnemonicParsing="false" onAction="#buyPotion2Button" text="Buy" />
-      <Label id="slot2Potion" layoutX="183.0" layoutY="485.0" text="120 Gold" />
-      <Label id="slot3_2Cost" layoutX="142.0" layoutY="527.0" text="100 HP restore" />
+      <Label id="slot2Potion" layoutX="178.0" layoutY="486.0" text="120 Gold" />
+      <Label id="slot3_2Cost" layoutX="147.0" layoutY="519.0" text="100 HP restore" />
       <Label layoutX="869.0" layoutY="203.0" prefHeight="147.0" prefWidth="232.0" text="Health:">
          <font>
             <Font name="System Bold" size="54.0" />
