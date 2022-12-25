@@ -28,6 +28,7 @@ import javafx.stage.Stage;
 public class MainController extends Main implements Initializable {
 
 	static String name;
+	static String CClass;
 	static String gender;
 	static int age = 0;
 	static int appearance = -1;
@@ -146,11 +147,12 @@ public class MainController extends Main implements Initializable {
 		System.out.println("Age: " + age);
 		System.out.println("Race: " + boxrace.getValue());
 		System.out.println("Class: " + boxclass.getValue());
-		System.out.println("Job: " + boxjob.getValue());
+		//System.out.println("Job: " + boxjob.getValue());
 		System.out.println("----------------------------");
 		System.out.println("");
 		System.out.println("Karakter olusturuldu oyun baslatılıyor!");
 
+		CClass = boxclass.getValue();
 		name = namefield.getText();
 		race = boxrace.getValue();
 		classlar = boxclass.getValue();
@@ -173,13 +175,11 @@ public class MainController extends Main implements Initializable {
 	}
 
 	private String[] races = { "Human", "Elf", "Ork", "Urk-Hai", "Dwarf" };
-	private String[] claslar = { "Swordman", "Mage", "Healer", "Wise" };
-	private String[] jobs = { "Madenci", "Oduncu", "Koylu", "Is adami", "Asci" };
+	private String[] claslar = { "Swordman", "Mage", "Healer"};
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		boxrace.getItems().addAll(races);
 		boxclass.getItems().addAll(claslar);
-		boxjob.getItems().addAll(jobs);
 	}
 }

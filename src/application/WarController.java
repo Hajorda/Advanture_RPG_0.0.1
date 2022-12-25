@@ -219,6 +219,8 @@ public class WarController implements Initializable {
 		if(durum==1) {
 			goblin.setHealth((goblin.getHealth()+goblin.getArmor()) - player.getDamage());
 			player.setHealth((player.getHealth() + player.getArmor()) - goblin.getDamage());
+				
+			
 		}
 		else if(durum==2) {
 			skeleton.setHealth((skeleton.getHealth()+skeleton.getArmor()) - player.getDamage());
@@ -258,6 +260,10 @@ public class WarController implements Initializable {
 		// Canavarlarla konuşulan metod.
 	public String speak() {
 		
+		if(level/10==1) {
+			return "!!! BOSS LEVELE GELDİNİZ, DİKKATLİ OLUN !!!";
+		}
+		
 		switch(konusma) {
 			case 1:
 				return player.getName()+": Karsıma cıkın pis yaratıklar";
@@ -270,6 +276,7 @@ public class WarController implements Initializable {
 			case 4:
 				return player.getName()+": Annemin ruhu için savaşıyorum";
 			default:
+				konusma=1;
 				return "Uykum geldi!";
 		}
 	}
@@ -305,6 +312,11 @@ public class WarController implements Initializable {
 		goblin = new Goblin(level);
 		skeleton = new Skeleton(level);
 		zombie = new Zombie(level);
+		if(level/10==1) {
+			goblin = new Goblin(level,"boss");
+			skeleton = new Skeleton(level,"boss");
+			zombie = new Zombie(level,"boss");
+		}
 	}
 	
 	@Override
