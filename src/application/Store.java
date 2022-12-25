@@ -43,6 +43,7 @@ public class Store implements Initializable{
 	
 	
 	
+	
 	public  void readMethod() {
 		String info;
 		File file = new File("info.txt");
@@ -99,9 +100,9 @@ public class Store implements Initializable{
 
 	
 	public void buySword(int index) {
-		if(index*10 <= player.getGold()) {
+		if(index*50 <= player.getGold()) {
+			player.setGold(player.getGold()-index*50);
 			player.setDamage(player.getDamage()+(index*30));
-			System.out.println(player.getDamage());
 		}
 		else {
 			System.out.println("!! PARA YETERSİZ !!");
@@ -110,9 +111,9 @@ public class Store implements Initializable{
 
 	
 	public void buyArmor(int index) {
-		if(index*20 <= player.getGold()) {
-			player.setArmor(player.getArmor()+(index*10));
-			player.setGold(player.getGold()-(index*20));
+		if(index*50 <= player.getGold()) {
+			player.setGold(player.getGold()-index*50);
+			player.setArmor(player.getArmor()+(index*20));
 		}
 		else {
 			System.out.println("!! PARA YETERSİZ !!");
@@ -122,18 +123,18 @@ public class Store implements Initializable{
 	
 
 	public void buyMediumPotion(int index) {
-		if(index*20 <= player.getGold()) {
-			player.setGold(player.getGold()-(index*20));
-			player.setHealth(player.getHealth()+30);
+		if(index*30 <= player.getGold()) {
+			player.setGold(player.getGold()-(index*30));
+			player.setHealth(player.getHealth()+25);
 			Battlefield.setMediumPotionCounter(Battlefield.getMediumPotionCounter()+1);;
 		}
 	}
 
 
 	public void buyBigPotion(int index) {
-		if((index*40) <= player.getGold()) {
-			player.setGold(player.getGold()-(index*40));
-			player.setHealth(player.getHealth()+60);
+		if(index*60 <= player.getGold()) {
+			player.setGold(player.getGold()-(index*60));
+			player.setHealth(player.getHealth()+100);
 			Battlefield.setBigPotionCounter(Battlefield.getBigPotionCounter()+1);;
 		}
 	}
