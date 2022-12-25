@@ -197,6 +197,10 @@ public class WarController implements Initializable {
 			 
 		} else if (goblin.getHealth()<=0 && skeleton.getHealth()<=0 && zombie.getHealth()<=0) {
 
+			goblin.setHealth(100);
+			skeleton.setHealth(100);
+			zombie.setHealth(100);
+			
 			getReward(player);
 			increaseLevel();
 
@@ -229,17 +233,13 @@ public class WarController implements Initializable {
 			}
 		}
 		else if(durum==3) {
-<<<<<<< Updated upstream
-			zombie.setHealth((zombie.getHealth() + zombie.getArmor()) - player.getDamage());
-			player.setHealth((player.getHealth() + player.getArmor()) - zombie.getDamage());
-			durum=1;
-=======
+
 			if(zombie.getArmor()<player.getDamage()) {
 				zombie.setHealth((zombie.getHealth() + zombie.getArmor()) - player.getDamage());
 				player.setHealth((player.getHealth() + player.getArmor()) - zombie.getDamage());
 			}
 			durum=0;
->>>>>>> Stashed changes
+
 		}
 		durum++;
 		System.out.println("Karakter "+player.getHealth());
@@ -250,6 +250,11 @@ public class WarController implements Initializable {
 
 		//	Tavern tuşuna basılma durumunda çağrılan metod.
 	public void goStore(ActionEvent event) throws IOException {
+		
+		goblin.setHealth(100);
+		skeleton.setHealth(100);
+		zombie.setHealth(100);
+		
 		
 		String string = player.getHealth() + "," + player.getArmor() + "," + player.getDamage() + "," + player.getName()
 				+ "," + player.getGold();
