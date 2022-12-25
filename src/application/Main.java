@@ -24,7 +24,6 @@ public class Main extends Application {
 			stage.show();
 			stage.setTitle("Advanture RPG Game");
 
-			stage.setResizable(false);
 
 		} catch (Exception e) {
 			e.printStackTrace();
