@@ -17,7 +17,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 
@@ -40,7 +43,8 @@ public class Store implements Initializable{
 	private Label armorLabel;
 	@FXML
 	private Label damageLabel;
-	
+	@FXML
+	private Label goldLabel;
 	
 	
 	
@@ -103,9 +107,10 @@ public class Store implements Initializable{
 		if(index*50 <= player.getGold()) {
 			player.setGold(player.getGold()-index*50);
 			player.setDamage(player.getDamage()+(index*30));
+			setStats() ;
 		}
 		else {
-			System.out.println("!! PARA YETERSİZ !!");
+			uyari();
 		}
 	}
 
@@ -114,9 +119,10 @@ public class Store implements Initializable{
 		if(index*50 <= player.getGold()) {
 			player.setGold(player.getGold()-index*50);
 			player.setArmor(player.getArmor()+(index*20));
+			setStats(); 
 		}
 		else {
-			System.out.println("!! PARA YETERSİZ !!");
+			uyari();
 		}
 	}
 
@@ -125,18 +131,22 @@ public class Store implements Initializable{
 	public void buyMediumPotion(int index) {
 		if(index*30 <= player.getGold()) {
 			player.setGold(player.getGold()-(index*30));
-			player.setHealth(player.getHealth()+25);
-			Battlefield.setMediumPotionCounter(Battlefield.getMediumPotionCounter()+1);;
+			WarController.setMediumPotionCounter(WarController.getMediumPotionCounter()+1);;
+			setStats();
 		}
+		else
+			uyari();
 	}
 
 
 	public void buyBigPotion(int index) {
 		if(index*60 <= player.getGold()) {
 			player.setGold(player.getGold()-(index*60));
-			player.setHealth(player.getHealth()+100);
-			Battlefield.setBigPotionCounter(Battlefield.getBigPotionCounter()+1);;
+			WarController.setBigPotionCounter(WarController.getBigPotionCounter()+1);;
+			setStats(); 
 		}
+		else
+			uyari();
 	}
 	
 	
@@ -167,8 +177,20 @@ public class Store implements Initializable{
 	public void setStats() {
 		armorLabel.setText(player.getArmor()+"");
 		damageLabel.setText(player.getDamage()+"");
+		goldLabel.setText(player.getGold()+"");
 	}
 
+
+	public void uyari() {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Fakir");
+		alert.setHeaderText("Paran Yetersiz");
+		alert.setContentText("Bu ürünü almak için paran yetersiz");
+
+		if (alert.showAndWait().get() == ButtonType.OK) {
+
+		}
+	}
 
 
 	@Override

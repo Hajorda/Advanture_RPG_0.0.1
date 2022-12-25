@@ -147,7 +147,7 @@ public class WarController implements Initializable {
 		skeleton.setHealth(skeleton.getHealth() - (player.getDamage() - skeleton.getArmor()));
 		zombie.setHealth(zombie.getHealth() - (player.getDamage() - zombie.getArmor()));
 		goblin.setHealth(goblin.getHealth() - (player.getDamage() - goblin.getArmor()));
-		player.setHealth(10+player.getHealth() + (player.getArmor())- ((zombie.getDamage() + skeleton.getDamage() + goblin.getDamage())));
+		player.setHealth(player.getHealth() + (player.getArmor())- ((zombie.getDamage() + skeleton.getDamage() + goblin.getDamage())));
 
 	}
 	// yaratıkların kaçar tane olacağına karar veren method
@@ -288,6 +288,7 @@ public class WarController implements Initializable {
 			setMediumPotionCounter(mediumPotionCounter - 1);
 			player.setHealth(player.getHealth()+25);
 			smallpData.setText(getMediumPotionCounter() + "");
+			healthBar.setProgress((player.getHealth() / (double) 100));
 		}
 	}
 
@@ -296,6 +297,7 @@ public class WarController implements Initializable {
 			setBigPotionCounter(bigPotionCounter - 1);
 			player.setHealth(100);
 			bigpData.setText(getBigPotionCounter() + "");
+			healthBar.setProgress((player.getHealth() / (double) 100));
 		}
 	}
 
@@ -317,6 +319,12 @@ public class WarController implements Initializable {
 		smallpData.setText(getMediumPotionCounter() + "");
 
 		consoleData.setText("Hoş geldin: " + MainController.name);
+		
+		 healthBar.setProgress((player.getHealth() / (double) 100));
+		healthBar1.setProgress((goblin.getHealth() / (double) 100));
+		healthBar2.setProgress((skeleton.getHealth() / (double) 100));
+		healthBar3.setProgress((zombie.getHealth() / (double) 100));
+		
 		fight(goblin, skeleton, zombie, player);
 
 	}

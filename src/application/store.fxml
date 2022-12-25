@@ -122,5 +122,15 @@
             <Image url="@armor4.png" />
          </image>
       </ImageView>
+      <Label layoutX="1334.0" layoutY="857.0" prefHeight="155.0" prefWidth="303.0" text="Gold:">
+         <font>
+            <Font size="70.0" />
+         </font>
+      </Label>
+      <Label id="damageLabel" fx:id="goldLabel" layoutX="1587.0" layoutY="883.0" prefHeight="103.0" prefWidth="232.0" text="Label">
+         <font>
+            <Font size="70.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
