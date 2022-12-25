@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Store">
    <children>
-      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" layoutX="-1.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@tavernPanel(1).png" />
          </image>
@@ -17,7 +17,7 @@
       <Button layoutX="102.0" layoutY="477.0" mnemonicParsing="false" onAction="#buySword1Button" text="Buy" />
       <Button layoutX="251.0" layoutY="477.0" mnemonicParsing="false" onAction="#buySword2Button" text="Buy" />
       <Button layoutX="407.0" layoutY="477.0" mnemonicParsing="false" onAction="#buySword3Button" text="Buy" />
-      <Button layoutX="551.0" layoutY="483.0" mnemonicParsing="false" onAction="#buySword4Button" text="Buy" />
+      <Button layoutX="551.0" layoutY="478.0" mnemonicParsing="false" onAction="#buySword4Button" text="Buy" />
       <ImageView id="slot1_1image" fitHeight="70.0" fitWidth="54.0" layoutX="42.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView id="slot1_2image" fitHeight="70.0" fitWidth="54.0" layoutX="103.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView id="slot1_3image" fitHeight="70.0" fitWidth="54.0" layoutX="167.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
@@ -47,31 +47,31 @@
          <image>
             <Image url="@medPotion.png" />
          </image></ImageView>
-      <Label id="slot1DamageLabel" layoutX="53.0" layoutY="450.0" text="Label" />
-      <Label id="slot1_1Cost" layoutX="153.0" layoutY="450.0" text="Label" />
-      <Label id="slot2DamageLabel" layoutX="207.0" layoutY="450.0" text="Label" />
-      <Label id="slot1_2Cost" layoutX="305.0" layoutY="450.0" text="Label" />
-      <Label id="slot3DamageLabel" layoutX="353.0" layoutY="450.0" text="Label" />
-      <Label id="slot1_3Cost" layoutX="454.0" layoutY="450.0" text="Label" />
-      <Label id="slot4DamageLabel" layoutX="500.0" layoutY="450.0" text="Label" />
-      <Label id="slot1_4Cost" layoutX="603.0" layoutY="450.0" text="Label" />
-      <Label id="slot1ArmorLabel" layoutX="94.0" layoutY="617.0" text="Label" />
-      <Label id="slot2_1Cost" layoutX="121.0" layoutY="617.0" text="Label" />
-      <Label id="slot2ArmorLabel" layoutX="207.0" layoutY="617.0" text="Label" />
-      <Label id="slot2_2Cost" layoutX="307.0" layoutY="617.0" text="Label" />
-      <Label id="slot3ArmorLabel" layoutX="353.0" layoutY="617.0" text="Label" />
-      <Label id="slot2_3Cost" layoutX="454.0" layoutY="617.0" text="Label" />
-      <Label id="slot4ArmorLabel" layoutX="500.0" layoutY="617.0" text="Label" />
-      <Label id="slot2_4Cost" layoutX="603.0" layoutY="617.0" text="Label" />
-      <Label id="slot1Potion" layoutX="56.0" layoutY="792.0" text="Label" />
-      <Label id="slot3_1Cost" layoutX="153.0" layoutY="792.0" text="Label" />
-      <Button layoutX="260.0" layoutY="827.0" mnemonicParsing="false" onAction="#buyPotion2Button" text="Buy" />
+      <Label id="slot1DamageLabel" layoutX="53.0" layoutY="450.0" text="50 Gold" />
+      <Label id="slot1_1Cost" layoutX="129.0" layoutY="450.0" text="+30 DMG" />
+      <Label id="slot2DamageLabel" layoutX="207.0" layoutY="450.0" text="100 Gold" />
+      <Label id="slot1_2Cost" layoutX="278.0" layoutY="450.0" text="+60 DMG" />
+      <Label id="slot3DamageLabel" layoutX="353.0" layoutY="450.0" text="150 Gold" />
+      <Label id="slot1_3Cost" layoutX="426.0" layoutY="450.0" text="+90 DMG" />
+      <Label id="slot4DamageLabel" layoutX="500.0" layoutY="450.0" text="200 Gold" />
+      <Label id="slot1_4Cost" layoutX="572.0" layoutY="450.0" text="+120 DMG" />
+      <Label id="slot1ArmorLabel" layoutX="56.0" layoutY="617.0" text="50 Gold" />
+      <Label id="slot2_1Cost" layoutX="122.0" layoutY="617.0" text="+20 ARMR" />
+      <Label id="slot2ArmorLabel" layoutX="207.0" layoutY="617.0" text="100 Gold" />
+      <Label id="slot2_2Cost" layoutX="275.0" layoutY="617.0" text="+40 ARMR" />
+      <Label id="slot3ArmorLabel" layoutX="353.0" layoutY="617.0" text="150 Gold" />
+      <Label id="slot2_3Cost" layoutX="424.0" layoutY="617.0" text="+60 ARMR" />
+      <Label id="slot4ArmorLabel" layoutX="500.0" layoutY="617.0" text="200 Gold" />
+      <Label id="slot2_4Cost" layoutX="571.0" layoutY="617.0" text="+80 ARMR" />
+      <Label id="slot1Potion" layoutX="56.0" layoutY="792.0" text="30 Gold" />
+      <Label id="slot3_1Cost" layoutX="109.0" layoutY="792.0" text="25 HP restore" />
+      <Button layoutX="256.0" layoutY="827.0" mnemonicParsing="false" onAction="#buyPotion2Button" text="Buy" />
       <ImageView id="slot3_2image" fitHeight="86.0" fitWidth="67.0" layoutX="237.0" layoutY="710.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@bigPotion.png" />
          </image></ImageView>
-      <Label id="slot2Potion" layoutX="207.0" layoutY="792.0" text="Label" />
-      <Label id="slot3_2Cost" layoutX="305.0" layoutY="792.0" text="Label" />
+      <Label id="slot2Potion" layoutX="207.0" layoutY="792.0" text="60 Gold" />
+      <Label id="slot3_2Cost" layoutX="255.0" layoutY="792.0" text="100 HP restore" />
       <Label layoutX="1317.0" layoutY="379.0" prefHeight="177.0" prefWidth="232.0" text="Health:">
          <font>
             <Font size="70.0" />
@@ -88,7 +88,10 @@
          <font>
             <Font size="70.0" />
          </font></Label>
-      <ImageView fitHeight="86.0" fitWidth="94.0" layoutX="83.0" layoutY="531.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="86.0" fitWidth="94.0" layoutX="78.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@armor1.png" />
+         </image></ImageView>
      
       <Label layoutX="1317.0" layoutY="537.0" prefHeight="177.0" prefWidth="226.0" text="Armor:">
          <font>
