@@ -15,14 +15,14 @@
             <Image url="@battlefieldPanelAyarlanmış.png" />
          </image>
       </ImageView>
-      <Button layoutX="1220.0" layoutY="921.0" mnemonicParsing="false" onAction="#Combat" onMouseClicked="#Combat" prefHeight="121.0" prefWidth="233.0" text="Hit" />
+      <Button layoutX="614.0" layoutY="251.0" mnemonicParsing="false" onAction="#Combat" onMouseClicked="#Combat" prefHeight="121.0" prefWidth="233.0" text="Hit" />
       <ImageView fx:id="pic" fitHeight="410.0" fitWidth="450.0" layoutX="750.0" layoutY="649.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@adam0.png" />
          </image></ImageView>
       <ProgressBar fx:id="healthBar1" layoutX="363.0" layoutY="186.0" prefHeight="38.0" prefWidth="233.0" progress="1.0" />
-      <ImageView fx:id="imgGoblin" fitHeight="253.0" fitWidth="233.0" layoutX="539.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imgSkeleton" fitHeight="326.0" fitWidth="270.0" layoutX="840.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgGoblin" fitHeight="253.0" fitWidth="233.0" layoutX="381.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgSkeleton" fitHeight="326.0" fitWidth="270.0" layoutX="826.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgZombie" fitHeight="326.0" fitWidth="219.0" layoutX="1147.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="nickname" layoutX="44.0" layoutY="670.0" prefHeight="75.0" prefWidth="110.0" text="Null" textAlignment="CENTER">
          <font>
