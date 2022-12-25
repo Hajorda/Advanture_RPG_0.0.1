@@ -23,7 +23,6 @@
       <ProgressBar fx:id="healthBar1" layoutX="363.0" layoutY="186.0" prefHeight="38.0" prefWidth="233.0" progress="1.0" />
       <ImageView fx:id="imgGoblin" fitHeight="253.0" fitWidth="233.0" layoutX="381.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgSkeleton" fitHeight="326.0" fitWidth="270.0" layoutX="826.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imgZombie" fitHeight="326.0" fitWidth="219.0" layoutX="1147.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="nickname" layoutX="44.0" layoutY="670.0" prefHeight="75.0" prefWidth="110.0" text="Null" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="52.0" />
@@ -78,8 +77,14 @@
       <Button layoutX="1770.0" layoutY="18.0" mnemonicParsing="false" onAction="#goAyar" prefHeight="95.0" prefWidth="126.0" text="Settings" />
       <ProgressBar fx:id="healthBar2" layoutX="844.0" layoutY="186.0" prefHeight="38.0" prefWidth="233.0" progress="1.0" />
       <ProgressBar fx:id="healthBar3" layoutX="1325.0" layoutY="186.0" prefHeight="38.0" prefWidth="219.0" progress="1.0" />
-      <Label fx:id="goblinLabel" layoutX="463.0" layoutY="157.0" text="goblin" />
-      <Label fx:id="skeletonLabel" layoutX="938.0" layoutY="157.0" text="goblin" />
-      <Label fx:id="zombieLabel" layoutX="1418.0" layoutY="157.0" text="goblin" />
+      <Label fx:id="goblinLabel" layoutX="463.0" layoutY="157.0" text="enemy" />
+      <Label fx:id="skeletonLabel" layoutX="938.0" layoutY="157.0" text="enemy" />
+      <Label fx:id="zombieLabel" layoutX="1418.0" layoutY="157.0" text="enemy" />
+      <Label fx:id="goblinLabel1" layoutX="399.0" layoutY="196.0" text="HP" />
+      <Label fx:id="goblinHP" layoutX="502.0" layoutY="197.0" text="HealthPoint" />
+      <Label fx:id="goblinLabel11" layoutX="879.0" layoutY="196.0" text="HP" />
+      <Label fx:id="SkeletonHP" layoutX="982.0" layoutY="197.0" text="HealthPoint" />
+      <Label fx:id="goblinLabel111" layoutX="1350.0" layoutY="197.0" text="HP" />
+      <Label fx:id="zombieHP" layoutX="1453.0" layoutY="198.0" text="HealthPoint" />
    </children>
 </AnchorPane>
