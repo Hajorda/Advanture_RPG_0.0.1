@@ -219,8 +219,6 @@ public class WarController implements Initializable {
 		if(durum==1) {
 			goblin.setHealth((goblin.getHealth()+goblin.getArmor()) - player.getDamage());
 			player.setHealth((player.getHealth() + player.getArmor()) - goblin.getDamage());
-				
-			
 		}
 		else if(durum==2) {
 			skeleton.setHealth((skeleton.getHealth()+skeleton.getArmor()) - player.getDamage());
@@ -266,18 +264,18 @@ public class WarController implements Initializable {
 		
 		switch(konusma) {
 			case 1:
-				return player.getName()+": Karsıma cıkın pis yaratıklar";
+				return player.getName()+": Savunun pis yaratıklar !";
 
 			case 2:
-				return player.getName()+": Soyunuzu kurutmaya geliyorum!";
+				return player.getName()+": Ailemin intikamını alacağım !";
 					
 			case 3:
-				return player.getName()+": Hepiniz annenizin adını söylesin hemen bana";
+				return player.getName()+": Beni yenemezsiniz zavallılar !";
 			case 4:
-				return player.getName()+": Annemin ruhu için savaşıyorum";
+				return player.getName()+": Eren lordumuzun emrini yerine getireceğim !";
 			default:
 				konusma=1;
-				return "Uykum geldi!";
+				return "";
 		}
 	}
 
