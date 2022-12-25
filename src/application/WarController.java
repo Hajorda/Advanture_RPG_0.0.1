@@ -1,8 +1,14 @@
 package application;
 
+import java.io.File; 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +32,25 @@ public class WarController implements Initializable {
 	private static Goblin goblin = new Goblin(level);
 	private static Skeleton skeleton = new Skeleton(level);
 	private static Zombie zombie = new Zombie(level);
-	private static Player player = new Player(100, 10, 10, "sa", 100);
+	//private static Player player = new Player(100, 10, 10, "sa", 100);
+	
+	Player player;
+	public void method() {
+		String info;
+		File file = new File("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
+		try {
+			Scanner scanner = new Scanner(file);	
+			info = scanner.nextLine();
+			String[] a = info.split(",");
+			player = new Player(Integer.parseInt(a[0]), Integer.parseInt(a[1]), Integer.parseInt(a[2]), a[3] , Integer.parseInt(a[4]));
+			Files.writeString(file.toPath(), "", StandardCharsets.UTF_8);
+		}
+		catch(Exception a) {
+			System.out.println("yokmuş scanner");
+			
+		}
+		
+	}
 
 	private void gelistir() {
 		goblin = new Goblin(level);
@@ -149,7 +173,7 @@ public class WarController implements Initializable {
 
 		speak();
 		fight(goblin, skeleton, zombie, player);
-		//eren -=10; //eren =-eren;
+		eren -=10; //eren =-eren;
 		player.setHealth(eren);
 		// gunceleme
 		// healthBar,healthBar1,healthBar2,healthBar3
@@ -216,8 +240,13 @@ public class WarController implements Initializable {
 	}
 
 	public void goStore(ActionEvent event) throws IOException {
-		Location.location = true;
-		Location.locationControl();
+//		Location.location = true;
+//		Location.locationControl();
+		
+		String string =player.getHealth()+","+  player.getArmor()+","+ player.getDamage()+"," + player.getName() +","+  player.getGold();
+		
+		Path path = Paths.get("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
+		Files.writeString(path, string, StandardCharsets.UTF_8);
 
 		// Store Gitme Kodu
 
@@ -250,6 +279,7 @@ public class WarController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		method();
 		generateObstacle();
 		zombieLabel.setText(zombie.getName()+level);
 		skeletonLabel.setText(skeleton.getName()+level);

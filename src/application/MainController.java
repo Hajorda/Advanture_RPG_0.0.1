@@ -160,10 +160,9 @@ public class MainController extends Main implements Initializable {
 			classlar = boxclass.getValue();
 			job = boxjob.getValue();
 			
-			Player player = new Player(100, 10, 10, name, 100);
+			Player player = new Player(100, 10, 10, name,100);
 			
 			String string =player.getHealth()+","+  player.getArmor()+","+ player.getDamage()+"," + player.getName() +","+  player.getGold();
-			
 			Path path = Paths.get("//Users//abdullahakin//Desktop//Advanture_RPG_0.0.1//src//application//info.txt");
 			Files.writeString(path, string, StandardCharsets.UTF_8);
 			
@@ -177,9 +176,10 @@ public class MainController extends Main implements Initializable {
 			stage.setScene(scene);
 			stage.show();
 		
-			Location.locationControl();
+//			Location.locationControl();
 		
 		//}
+			
 	}
 
 	private String[] races = { "Human", "Elf", "Ork", "Urk-Hai", "Dwarf" };
