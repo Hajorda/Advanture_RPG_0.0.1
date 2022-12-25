@@ -130,6 +130,7 @@ public class WarController implements Initializable {
 
 	public static void increaseLevel() {
 		level++;
+		System.out.println(level);
 	}
 
 	public void goAyar(ActionEvent event) throws IOException {
@@ -146,8 +147,7 @@ public class WarController implements Initializable {
 		skeleton.setHealth(skeleton.getHealth() - (player.getDamage() - skeleton.getArmor()));
 		zombie.setHealth(zombie.getHealth() - (player.getDamage() - zombie.getArmor()));
 		goblin.setHealth(goblin.getHealth() - (player.getDamage() - goblin.getArmor()));
-		player.setHealth(player.getHealth() - (zombie.getDamage() + skeleton.getDamage() + goblin.getDamage())
-				+ (3 * player.getArmor()));
+		player.setHealth(10+player.getHealth() + (player.getArmor())- ((zombie.getDamage() + skeleton.getDamage() + goblin.getDamage())));
 
 	}
 	// yaratıkların kaçar tane olacağına karar veren method
@@ -169,7 +169,8 @@ public class WarController implements Initializable {
 
 	public void Combat(ActionEvent event) throws IOException {
 
-		speak();
+		consoleData.setText(speak());
+		konusma++;
 		fight(goblin, skeleton, zombie, player);
 		player.setHealth(player.getHealth());
 		// gunceleme
@@ -211,20 +212,21 @@ public class WarController implements Initializable {
 //goblin.getName() + level
 
 		if (player.getHealth() < 0) {
-			// goDeath(stage);
-			/*
-			 * Parent root = FXMLLoader.load(getClass().getResource("death.fxml")); stage =
-			 * (Stage) ((Node) event.getSource()).getScene().getWindow(); scene = new
-			 * Scene(root); stage.setScene(scene); stage.show();
-			 */
+			
+			 Parent root = FXMLLoader.load(getClass().getResource("death.fxml")); stage =
+			 (Stage) ((Node) event.getSource()).getScene().getWindow(); scene = new
+			 Scene(root); stage.setScene(scene); stage.show();
+			 
 		} else if (!(goblin.getHealth() + skeleton.getHealth() + zombie.getHealth() > 0)) {
 
 			getReward(player);
 			increaseLevel();
 
-			Location.location = true;
-			Location.locationControl();
-
+			String string = player.getHealth() + "," + player.getArmor() + "," + player.getDamage() + "," + player.getName()
+			+ "," + player.getGold();
+			Path path = Paths.get("info.txt");
+			Files.writeString(path, string, StandardCharsets.UTF_8);
+	
 			Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
@@ -245,7 +247,7 @@ public class WarController implements Initializable {
 		Files.writeString(path, string, StandardCharsets.UTF_8);
 
 		// Store Gitme Kodu
-
+	
 		Parent root = FXMLLoader.load(getClass().getResource("store.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
@@ -255,21 +257,46 @@ public class WarController implements Initializable {
 
 	public static void getReward(Player player) {
 		player.setGold(player.getGold() + (level * 10));
+		System.out.println(player.getGold());
 	}
 
 	// Canavarlarla konuşulan metod.
-	public static String speak() {
-		return "sea";
+	int konusma = 1;
+	public String speak() {
+		
+		switch(konusma) {
+			case 1:
+				return player.getName()+": Karsıma cıkın pis yaratıklar";
+
+			case 2:
+				return player.getName()+": Soyunuzu kurutmaya geliyorum!";
+					
+			case 3:
+				return player.getName()+": Hepiniz annenizin adını söylesin hemen bana";
+			case 4:
+				return player.getName()+": Annemin ruhu için savaşıyorum";
+			default:
+				return "Uykum geldi!";
+		}
+		
+		
+	
 	}
 
 	public void useMediumPotion() {
-		setMediumPotionCounter(mediumPotionCounter - 1);
-		smallpData.setText(getMediumPotionCounter() + "");
+		if(getMediumPotionCounter()>0) {
+			setMediumPotionCounter(mediumPotionCounter - 1);
+			player.setHealth(player.getHealth()+25);
+			smallpData.setText(getMediumPotionCounter() + "");
+		}
 	}
 
 	public void useBigPotion() {
-		setBigPotionCounter(bigPotionCounter - 1);
-		bigpData.setText(getBigPotionCounter() + "");
+		if(getBigPotionCounter()>0) {
+			setBigPotionCounter(bigPotionCounter - 1);
+			player.setHealth(100);
+			bigpData.setText(getBigPotionCounter() + "");
+		}
 	}
 
 	@Override
@@ -277,9 +304,9 @@ public class WarController implements Initializable {
 		// TODO Auto-generated method stub
 		method();
 		generateObstacle();
-		zombieLabel.setText(zombie.getName() + level);
-		skeletonLabel.setText(skeleton.getName() + level);
-		goblinLabel.setText(goblin.getName() + level);
+		zombieLabel.setText(zombie.getName()+level);
+		skeletonLabel.setText(skeleton.getName()+level);
+		goblinLabel.setText(goblin.getName()+level);
 
 		healthBar.setStyle("-fx-accent: #00FF00;");
 		nickname.setText(MainController.name);
